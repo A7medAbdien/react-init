@@ -10,22 +10,23 @@ interface CardContainerProps {
 const CardContainer: React.FC<CardContainerProps> = ({ cardList }) => {
 
     return (
-        <IonGrid>
-            <IonRow >
-                {cardList.map((card, index) => (
-                    <IonCol key={index} size="6">
-                        <IonCard className='card'>
-                            <IonCardHeader>
-                                <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
-                                <IonCardTitle>{card.title}</IonCardTitle>
-                            </IonCardHeader>
-                            <IonCardContent>{card.content}</IonCardContent>
-                        </IonCard>
-                    </IonCol>
-
-                ))}
-            </IonRow>
-        </IonGrid>
+        <IonContent>
+            <IonGrid>
+                <IonRow>
+                    {cardList.map((card, index) => (
+                        <IonCol key={index} size="6">
+                            <IonCard className="card fade-in">
+                                <IonCardHeader>
+                                    <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
+                                    <IonCardTitle>{card.title}</IonCardTitle>
+                                </IonCardHeader>
+                                <IonCardContent>{card.content}</IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    ))}
+                </IonRow>
+            </IonGrid>
+        </IonContent>
     );
 };
 
