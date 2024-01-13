@@ -9,6 +9,10 @@
     transform: translateY(-50%);
 }
 
+.modal-wrapper {
+    background: transparent !important;
+}
+
 ion-note {
     display: block;
 }
