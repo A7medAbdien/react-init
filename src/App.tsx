@@ -86,11 +86,12 @@ const App: React.FC = () => (
                         <Register />
                     </Route>
                     <Route exact path="/profile">
-                        <Profile />
+
                     </Route>
                 </IonRouterOutlet>
 
                 <Taps />
+                <Profile />
             </LoginProvider>
         </IonReactRouter>
     </IonApp>

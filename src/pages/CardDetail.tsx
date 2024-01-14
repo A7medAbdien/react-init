@@ -2,6 +2,7 @@ import React from 'react';
 import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar } from '@ionic/react';
 import { useLocation, useParams } from 'react-router-dom';
 import { TabsData } from '../data/data';
+import { useLogin } from '../context/LoginContext';
 
 const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -15,6 +16,7 @@ const CardDetail: React.FC = () => {
     }
     const card = tab?.cardList.find(c => c.id === cardId)
 
+    const { setProfileOpen } = useLogin()
 
     return (
         <IonPage>
@@ -25,7 +27,7 @@ const CardDetail: React.FC = () => {
                     </IonButtons>
                     <IonTitle>{tab.name}</IonTitle>
                     <IonButtons collapse={true} slot="end">
-                        <IonButton>
+                        <IonButton onClick={() => setProfileOpen(true)}>
                             <IonAvatar>
                                 <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
                             </IonAvatar>

@@ -1,21 +1,20 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAvatar, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonList, IonModal, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
 import { useLogin } from '../context/LoginContext';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
+import { close } from 'ionicons/icons';
 
 const Profile: React.FC = () => {
-    const { loggedIn } = useLogin();
-    // if (!loggedIn) {
-    //     return <Redirect to="/login" />
-    // }
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const { setLoggedIn, setRegistered } = useLogin();
+    const { setLoggedIn, setRegistered, profileOpen, setProfileOpen, loggedIn } = useLogin();
     const history = useHistory();
+    if (!loggedIn) {
+        return <Redirect to="/login" />
+    }
 
-    const handleRegister = () => {
+    const handleSave = () => {
         // post username and password to server
         setRegistered(true)
         setLoggedIn(true);
@@ -23,16 +22,27 @@ const Profile: React.FC = () => {
     };
 
     return (
-        <IonPage >
+        <IonModal isOpen={profileOpen} >
             <IonContent color={'light'}>
                 <IonHeader>
                     <IonToolbar>
-                        <IonTitle>Register</IonTitle>
+                        <IonButtons onClick={() => setProfileOpen(false)} slot="start">
+                            <IonButton>
+                                <IonIcon icon={close} size="large"></IonIcon>
+                            </IonButton>
+                        </IonButtons>
+                        <IonTitle>Profile</IonTitle>
                     </IonToolbar>
                 </IonHeader>
 
 
                 <div className="login-container">
+                    <div className="profile-img-container">
+                        <IonAvatar className='profile-img' >
+                            <img className='profile-img' alt="Profile image" src="https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1" />
+                        </IonAvatar>
+                    </div>
+
                     <IonList inset={true}>
                         <IonItem>
                             <IonInput
@@ -61,13 +71,13 @@ const Profile: React.FC = () => {
                     </IonList>
 
                     <div className="ion-margin-horizontal">
-                        <IonButton expand="block" onClick={handleRegister}>
-                            Register
+                        <IonButton expand="block" onClick={handleSave}>
+                            Save
                         </IonButton>
                     </div>
                 </div>
             </IonContent>
-        </IonPage>
+        </IonModal>
     );
 };
 
