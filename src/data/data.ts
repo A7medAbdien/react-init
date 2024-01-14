@@ -58,26 +58,6 @@ export const Tab1CardList: CardType[] = [
 export const Tab2CardList = Tab1CardList
 export const Tab3CardList = Tab1CardList
 
-export const CardList: {
-    [key: string]: {
-        list: CardType[],
-        name: string
-    }
-} = {
-    'tab1': {
-        list: Tab1CardList,
-        name: 'Tab 1'
-    },
-    'tab2': {
-        list: Tab2CardList,
-        name: 'Tab 2'
-    },
-    'tab3': {
-        list: Tab3CardList,
-        name: 'Tab 3'
-    }
-}
-
 export const TabsData = [
     {
         name: 'Tab 1',

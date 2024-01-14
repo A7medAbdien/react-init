@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar } from '@ionic/react';
 import { useLocation, useParams } from 'react-router-dom';
-import { CardList } from '../data/data';
+import { TabsData } from '../data/data';
 
 const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -9,10 +9,12 @@ const CardDetail: React.FC = () => {
     const { cardId } = useParams<{ cardId: string, otherParam: string }>();
     const cardCategory = location.pathname.split('/')[1]
 
-    if (!Object.keys(CardList).includes(cardCategory)) {
+    const tab = TabsData.find(t => t.path === `/${cardCategory}`)
+    if (!tab) {
         return <div>No card ID provided</div>;
     }
-    const card = CardList[cardCategory].list.find(c => c.id === cardId);
+    const card = tab?.cardList.find(c => c.id === cardId)
+
 
     return (
         <IonPage>
@@ -21,7 +23,7 @@ const CardDetail: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton defaultHref="/" />
                     </IonButtons>
-                    <IonTitle>{CardList[cardCategory].name}</IonTitle>
+                    <IonTitle>{tab.name}</IonTitle>
                     <IonButtons collapse={true} slot="end">
                         <IonButton>
                             <IonAvatar>
