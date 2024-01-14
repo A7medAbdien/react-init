@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 interface CardContainerProps {
     cardList: CardType[];
-    parent: string
+    parent?: string
 }
 
 const CardContainer: React.FC<CardContainerProps> = ({ cardList, parent = 'vid' }) => {

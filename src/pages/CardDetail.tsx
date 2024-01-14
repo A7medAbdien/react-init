@@ -37,11 +37,10 @@ const CardDetail: React.FC = () => {
             <IonContent className="ion-padding ion-text-center" color={'light'}>
                 <h1>{card?.title}</h1>
                 <div
-                    className="ion-margin-top"
-                    style={{ height: 'auto', width: '100%', margin: 'auto' }}
+                    className="ion-margin-top video-container"
                 >
                     <video width="100%" height="auto" controls>
-                        <source src={vid} type="video/mp4" />
+                        <source src={card?.video} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

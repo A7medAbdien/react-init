@@ -1,5 +1,4 @@
 import { IonContent, IonPage } from '@ionic/react';
-import './Tab2.css';
 import CardContainer from '../components/CardContainer';
 import { Tab2CardList } from '../data/data';
 import Header from '../components/Header';
