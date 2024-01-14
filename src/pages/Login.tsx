@@ -19,6 +19,7 @@ const Login: React.FC = () => {
             setLoggedIn(true);
             history.replace(Links.home);
         } else {
+            console.log(username, password);
             setRegistered(false);
             history.replace(Links.register);
         }
