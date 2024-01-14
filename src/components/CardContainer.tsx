@@ -1,7 +1,7 @@
 // src/components/CardContainer.tsx
 
 import React from 'react';
-import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonContent, IonGrid, IonRow, IonCol } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonContent, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { CardType } from '../types/Types';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,11 @@ const CardContainer: React.FC<CardContainerProps> = ({ cardList, parent = 'vid' 
                                         <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
                                         <IonCardTitle>{card.title}</IonCardTitle>
                                     </IonCardHeader>
-                                    <IonCardContent>{card.content}</IonCardContent>
+                                    <IonImg
+                                        className='card-image-container'
+                                        src={card.image}
+                                        alt={card.title}
+                                    ></IonImg>
                                 </IonCard>
                             </Link>
                         </IonCol>

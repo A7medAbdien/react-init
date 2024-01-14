@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.card-image-container {
+    /* height: 200px; */
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

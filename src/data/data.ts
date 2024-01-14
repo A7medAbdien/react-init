@@ -36,7 +36,7 @@ export const Tab1CardList: CardType[] = [
         title: 'Card 2',
         subtitle: 'Subtitle 2',
         content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://res.cloudinary.com/dcmthd8bn/image/upload/v1689839244/ArtMixer/style1689839161.webp",
+        image: "https://docs-demo.ionic.io/assets/madison.jpg",
         video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4"
     },
     {
@@ -92,9 +92,5 @@ export const CardList: {
     'tab3': {
         list: Tab3CardList,
         name: 'Tab 3'
-    },
-    'vid': {
-        list: [],
-        name: 'Vid'
-    },
+    }
 }
