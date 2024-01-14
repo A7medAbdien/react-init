@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { Redirect, useHistory } from 'react-router-dom';
 import { close } from 'ionicons/icons';
+import { ProfileStrings } from '../data/Strings';
 
 const Profile: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -31,7 +32,7 @@ const Profile: React.FC = () => {
                                 <IonIcon icon={close} size="large"></IonIcon>
                             </IonButton>
                         </IonButtons>
-                        <IonTitle>Profile</IonTitle>
+                        <IonTitle>{ProfileStrings.title}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
 
@@ -39,14 +40,18 @@ const Profile: React.FC = () => {
                 <div className="login-container">
                     <div className="profile-img-container">
                         <IonAvatar className='profile-img' >
-                            <img className='profile-img' alt="Profile image" src="https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1" />
+                            <img
+                                className='profile-img'
+                                alt="Profile image"
+                                src={ProfileStrings.defaultProfileImage}
+                            />
                         </IonAvatar>
                     </div>
 
                     <IonList inset={true}>
                         <IonItem>
                             <IonInput
-                                label="Username" labelPlacement="floating" fill="outline" placeholder="username"
+                                label={ProfileStrings.usernameLabel} labelPlacement="floating" fill="outline" placeholder="username"
                                 type="text"
                                 value={username}
                                 onIonChange={(e) => setUsername(e.detail.value!)}
@@ -54,7 +59,7 @@ const Profile: React.FC = () => {
                         </IonItem>
                         <IonItem>
                             <IonInput
-                                label="Password" labelPlacement="floating" fill="outline" placeholder="password"
+                                label={ProfileStrings.passwordLabel} labelPlacement="floating" fill="outline" placeholder="password"
                                 type="password"
                                 value={password}
                                 onIonChange={(e) => setPassword(e.detail.value!)}
@@ -62,7 +67,7 @@ const Profile: React.FC = () => {
                         </IonItem>
                         <IonItem>
                             <IonInput
-                                label="Confirm Password" labelPlacement="floating" fill="outline" placeholder="Confirm Password"
+                                label={ProfileStrings.confirmPasswordLabel} labelPlacement="floating" fill="outline" placeholder="Confirm Password"
                                 type="password"
                                 value={password}
                                 onIonChange={(e) => setPassword(e.detail.value!)}
@@ -72,7 +77,7 @@ const Profile: React.FC = () => {
 
                     <div className="ion-margin-horizontal">
                         <IonButton expand="block" onClick={handleSave}>
-                            Save
+                            {ProfileStrings.saveButton}
                         </IonButton>
                     </div>
                 </div>

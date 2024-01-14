@@ -2,6 +2,7 @@ import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonList, IonModal,
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
+import { RegisterStrings } from '../data/Strings';
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -22,7 +23,7 @@ const Register: React.FC = () => {
             <IonContent color={'light'}>
                 <IonHeader>
                     <IonToolbar>
-                        <IonTitle>Register</IonTitle>
+                        <IonTitle>{RegisterStrings.title}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
 
@@ -31,7 +32,7 @@ const Register: React.FC = () => {
                     <IonList inset={true}>
                         <IonItem>
                             <IonInput
-                                label="Username" labelPlacement="floating" fill="outline" placeholder="username"
+                                label={RegisterStrings.usernameLabel} labelPlacement="floating" fill="outline" placeholder="username"
                                 type="text"
                                 value={username}
                                 onIonChange={(e) => setUsername(e.detail.value!)}
@@ -39,7 +40,7 @@ const Register: React.FC = () => {
                         </IonItem>
                         <IonItem>
                             <IonInput
-                                label="Password" labelPlacement="floating" fill="outline" placeholder="password"
+                                label={RegisterStrings.passwordLabel} labelPlacement="floating" fill="outline" placeholder="password"
                                 type="password"
                                 value={password}
                                 onIonChange={(e) => setPassword(e.detail.value!)}
@@ -47,7 +48,7 @@ const Register: React.FC = () => {
                         </IonItem>
                         <IonItem>
                             <IonInput
-                                label="Confirm Password" labelPlacement="floating" fill="outline" placeholder="Confirm Password"
+                                label={RegisterStrings.confirmPasswordLabel} labelPlacement="floating" fill="outline" placeholder="Confirm Password"
                                 type="password"
                                 value={password}
                                 onIonChange={(e) => setPassword(e.detail.value!)}
@@ -57,7 +58,7 @@ const Register: React.FC = () => {
 
                     <div className="ion-margin-horizontal">
                         <IonButton expand="block" onClick={handleRegister}>
-                            Register
+                            {RegisterStrings.registerButton}
                         </IonButton>
                     </div>
                 </div>
