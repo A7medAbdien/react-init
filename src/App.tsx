@@ -10,7 +10,6 @@ import {
     setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,35 +31,24 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 import Login from './pages/Login';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
 import { LoginProvider, useLogin } from './context/LoginContext';
 import Register from './pages/Register';
 import CardDetail from './pages/CardDetail';
 import { TabsData } from './data/data';
 import Tab from './components/Tab';
+import Profile from './pages/Profile';
 
 setupIonicReact();
 
 const Taps: React.FC = () => {
     const { loggedIn } = useLogin();
-    // if (!loggedIn) {
-    //     return <Redirect to="/login" />
-    // }
+    if (!loggedIn) {
+        return <Redirect to="/login" />
+    }
 
     return <>
         <IonTabs>
             <IonRouterOutlet>
-                {/* <Route exact path="/tab1">
-                    <Tab1 />
-                </Route>
-                <Route exact path="/tab2">
-                    <Tab2 />
-                </Route>
-                <Route path="/tab3">
-                    <Tab3 />
-                </Route> */}
                 <Route exact path={[...TabsData.map((t) => `${t.path}/:cardId`)]} >
                     <CardDetail />
                 </Route>
@@ -96,6 +84,9 @@ const App: React.FC = () => (
                     </Route>
                     <Route exact path="/register">
                         <Register />
+                    </Route>
+                    <Route exact path="/profile">
+                        <Profile />
                     </Route>
                 </IonRouterOutlet>
 
