@@ -9,7 +9,7 @@ const Header: React.FC<ContainerProps> = ({ name }) => {
         <IonHeader translucent={true}>
             <IonToolbar>
                 <IonTitle>{name}</IonTitle>
-                <IonButtons collapse={true} slot="start">
+                <IonButtons collapse={true} slot="end">
                     <IonButton>
                         <IonAvatar>
                             <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
