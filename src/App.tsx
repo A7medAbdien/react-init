@@ -38,14 +38,15 @@ import Tab3 from './pages/Tab3';
 import { LoginProvider, useLogin } from './context/LoginContext';
 import Register from './pages/Register';
 import CardDetail from './pages/CardDetail';
+import { TabsData } from './data/data';
 
 setupIonicReact();
 
 const Taps: React.FC = () => {
     const { loggedIn } = useLogin();
-    if (!loggedIn) {
-        return <Redirect to="/login" />
-    }
+    // if (!loggedIn) {
+    //     return <Redirect to="/login" />
+    // }
 
     return <>
         <IonTabs>
@@ -59,7 +60,7 @@ const Taps: React.FC = () => {
                 <Route path="/tab3">
                     <Tab3 />
                 </Route>
-                <Route exact path={["/tab1/:cardId", "/tab2/:cardId", "/tab3/:cardId"]} >
+                <Route exact path={["/vid/:cardId", ...TabsData.map((t) => `${t.path}/:cardId`)]} >
                     <CardDetail />
                 </Route>
                 <Route exact path="/">
@@ -68,18 +69,12 @@ const Taps: React.FC = () => {
             </IonRouterOutlet>
 
             <IonTabBar slot="bottom">
-                <IonTabButton tab="tab1" href="/tab1">
-                    <IonIcon aria-hidden="true" icon={triangle} />
-                    <IonLabel>Tab 1</IonLabel>
-                </IonTabButton>
-                <IonTabButton tab="tab2" href="/tab2">
-                    <IonIcon aria-hidden="true" icon={ellipse} />
-                    <IonLabel>Tab 2</IonLabel>
-                </IonTabButton>
-                <IonTabButton tab="tab3" href="/tab3">
-                    <IonIcon aria-hidden="true" icon={square} />
-                    <IonLabel>Tab 3</IonLabel>
-                </IonTabButton>
+                {TabsData.map((tab) => (
+                    <IonTabButton key={tab.name} tab={tab.name} href={tab.path}>
+                        <IonIcon aria-hidden="true" icon={tab.icon} />
+                        <IonLabel>{tab.name}</IonLabel>
+                    </IonTabButton>
+                ))}
             </IonTabBar>
         </IonTabs>
     </>

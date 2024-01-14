@@ -10,7 +10,7 @@ interface CardContainerProps {
     parent: string
 }
 
-const CardContainer: React.FC<CardContainerProps> = ({ cardList, parent }) => {
+const CardContainer: React.FC<CardContainerProps> = ({ cardList, parent = 'vid' }) => {
 
     return (
         <IonContent>
