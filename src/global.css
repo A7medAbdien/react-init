@@ -23,6 +23,10 @@
     animation: fadeIn 0.7s ease-in-out;
 }
 
+.fade-in .delay {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
 /** src/pages/Login.css */
 
 .login-container {

@@ -35,16 +35,16 @@ const CardDetail: React.FC = () => {
             </IonHeader>
 
             <IonContent className="ion-padding ion-text-center" color={'light'}>
-                <h1>{card?.title}</h1>
+                <h1 className='fade-in'>{card?.title}</h1>
                 <div
-                    className="ion-margin-top video-container"
+                    className="ion-margin-top video-container fade-in"
                 >
                     <video width="100%" height="100%" controls>
                         <source src={card?.video} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <p>{card?.content}</p>
+                <p className='fade-in'>{card?.content}</p>
             </IonContent>
         </IonPage>
     );
