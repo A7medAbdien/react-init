@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-interface LoginContextProps {
+interface GlobalContextProps {
     loggedIn: boolean;
     registered: boolean;
     profileOpen: boolean;
@@ -11,26 +11,26 @@ interface LoginContextProps {
     setProfileOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const LoginContext = createContext<LoginContextProps | undefined>(undefined);
+const GlobalContext = createContext<GlobalContextProps | undefined>(undefined);
 
-interface LoginProviderProps {
+interface GlobalProviderProps {
     children: ReactNode;
 }
 
-export const LoginProvider: React.FC<LoginProviderProps> = ({ children }) => {
+export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [registered, setRegistered] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
 
     return (
-        <LoginContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen }}>
+        <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen }}>
             {children}
-        </LoginContext.Provider>
+        </GlobalContext.Provider>
     );
 };
 
-export const useLogin = () => {
-    const context = useContext(LoginContext);
+export const useGlobal = () => {
+    const context = useContext(GlobalContext);
     if (!context) {
         throw new Error('useLogin must be used within a LoginProvider');
     }

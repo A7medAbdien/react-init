@@ -1,6 +1,6 @@
 import { IonAvatar, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonList, IonModal, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
-import { useLogin } from '../context/LoginContext';
+import { useGlobal } from '../context/GlobalContext';
 import { Redirect, useHistory } from 'react-router-dom';
 import { close } from 'ionicons/icons';
 
@@ -8,7 +8,7 @@ const Profile: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const { setLoggedIn, setRegistered, profileOpen, setProfileOpen, loggedIn } = useLogin();
+    const { setLoggedIn, setRegistered, profileOpen, setProfileOpen, loggedIn } = useGlobal();
     const history = useHistory();
     if (!loggedIn) {
         return <Redirect to="/login" />

@@ -31,7 +31,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 import Login from './pages/Login';
-import { LoginProvider, useLogin } from './context/LoginContext';
+import { GlobalProvider, useGlobal } from './context/GlobalContext';
 import Register from './pages/Register';
 import CardDetail from './pages/CardDetail';
 import { TabsData } from './data/data';
@@ -41,7 +41,7 @@ import Profile from './pages/Profile';
 setupIonicReact();
 
 const Taps: React.FC = () => {
-    const { loggedIn } = useLogin();
+    const { loggedIn } = useGlobal();
     if (!loggedIn) {
         return <Redirect to="/login" />
     }
@@ -77,7 +77,7 @@ const Taps: React.FC = () => {
 const App: React.FC = () => (
     <IonApp>
         <IonReactRouter>
-            <LoginProvider>
+            <GlobalProvider>
                 <IonRouterOutlet>
                     <Route exact path="/login">
                         <Login />
@@ -92,7 +92,7 @@ const App: React.FC = () => (
 
                 <Taps />
                 <Profile />
-            </LoginProvider>
+            </GlobalProvider>
         </IonReactRouter>
     </IonApp>
 );

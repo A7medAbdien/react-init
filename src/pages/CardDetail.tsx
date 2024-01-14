@@ -2,7 +2,7 @@ import React from 'react';
 import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar } from '@ionic/react';
 import { useLocation, useParams } from 'react-router-dom';
 import { TabsData } from '../data/data';
-import { useLogin } from '../context/LoginContext';
+import { useGlobal } from '../context/GlobalContext';
 
 const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -16,7 +16,7 @@ const CardDetail: React.FC = () => {
     }
     const card = tab?.cardList.find(c => c.id === cardId)
 
-    const { setProfileOpen } = useLogin()
+    const { setProfileOpen } = useGlobal()
 
     return (
         <IonPage>

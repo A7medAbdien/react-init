@@ -1,12 +1,12 @@
 import { IonAvatar, IonButton, IonButtons, IonHeader, IonTitle, IonToolbar } from "@ionic/react";
-import { useLogin } from "../context/LoginContext";
+import { useGlobal } from "../context/GlobalContext";
 
 interface ContainerProps {
     name?: string;
 }
 
 const Header: React.FC<ContainerProps> = ({ name }) => {
-    const { setProfileOpen } = useLogin()
+    const { setProfileOpen } = useGlobal()
     return <>
         <IonHeader translucent={true}>
             <IonToolbar>
