@@ -2,12 +2,15 @@
 
 import React from 'react';
 import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonContent, IonGrid, IonRow, IonCol } from '@ionic/react';
+import { CardType } from '../types/Types';
+import { Link } from 'react-router-dom';
 
 interface CardContainerProps {
-    cardList: { title: string; subtitle: string; content: string }[];
+    cardList: CardType[];
+    parent: string
 }
 
-const CardContainer: React.FC<CardContainerProps> = ({ cardList }) => {
+const CardContainer: React.FC<CardContainerProps> = ({ cardList, parent }) => {
 
     return (
         <IonContent>
@@ -15,13 +18,15 @@ const CardContainer: React.FC<CardContainerProps> = ({ cardList }) => {
                 <IonRow>
                     {cardList.map((card, index) => (
                         <IonCol key={index} size="6">
-                            <IonCard className="card fade-in">
-                                <IonCardHeader>
-                                    <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
-                                    <IonCardTitle>{card.title}</IonCardTitle>
-                                </IonCardHeader>
-                                <IonCardContent>{card.content}</IonCardContent>
-                            </IonCard>
+                            <Link to={`${parent}/${card.id}`} style={{ textDecoration: 'none' }}>
+                                <IonCard className="card fade-in">
+                                    <IonCardHeader>
+                                        <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
+                                        <IonCardTitle>{card.title}</IonCardTitle>
+                                    </IonCardHeader>
+                                    <IonCardContent>{card.content}</IonCardContent>
+                                </IonCard>
+                            </Link>
                         </IonCol>
                     ))}
                 </IonRow>

@@ -10,7 +10,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <Header name='Tab 1' />
       <IonContent fullscreen>
-        <CardContainer cardList={Tab1CardList} />
+        <CardContainer parent='Tab1' cardList={Tab1CardList} />
       </IonContent>
     </IonPage>
   );

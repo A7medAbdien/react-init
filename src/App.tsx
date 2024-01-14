@@ -37,6 +37,7 @@ import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import { LoginProvider, useLogin } from './context/LoginContext';
 import Register from './pages/Register';
+import CardDetail from './pages/CardDetail';
 
 setupIonicReact();
 
@@ -57,6 +58,9 @@ const Taps: React.FC = () => {
                 </Route>
                 <Route path="/tab3">
                     <Tab3 />
+                </Route>
+                <Route exact path={["/tab1/:cardId", "/tab2/:cardId", "/tab3/:cardId"]} >
+                    <CardDetail />
                 </Route>
                 <Route exact path="/">
                     <Redirect to="/tab1" />
