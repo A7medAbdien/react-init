@@ -39,6 +39,7 @@ import { LoginProvider, useLogin } from './context/LoginContext';
 import Register from './pages/Register';
 import CardDetail from './pages/CardDetail';
 import { TabsData } from './data/data';
+import Tab from './components/Tab';
 
 setupIonicReact();
 
@@ -51,7 +52,7 @@ const Taps: React.FC = () => {
     return <>
         <IonTabs>
             <IonRouterOutlet>
-                <Route exact path="/tab1">
+                {/* <Route exact path="/tab1">
                     <Tab1 />
                 </Route>
                 <Route exact path="/tab2">
@@ -59,12 +60,17 @@ const Taps: React.FC = () => {
                 </Route>
                 <Route path="/tab3">
                     <Tab3 />
-                </Route>
-                <Route exact path={["/vid/:cardId", ...TabsData.map((t) => `${t.path}/:cardId`)]} >
+                </Route> */}
+                <Route exact path={[...TabsData.map((t) => `${t.path}/:cardId`)]} >
                     <CardDetail />
                 </Route>
+                {TabsData.map((tab) => (
+                    <Route exact path={tab.path} key={tab.name}>
+                        <Tab name={tab.name} path={tab.path} cardList={tab.cardList} />
+                    </Route>
+                ))}
                 <Route exact path="/">
-                    <Redirect to="/tab1" />
+                    <Redirect to={TabsData[0].path} />
                 </Route>
             </IonRouterOutlet>
 
