@@ -4,24 +4,18 @@ import { useState } from 'react';
 import { useLogin } from '../context/LoginContext';
 import { useHistory } from 'react-router-dom';
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const { setLoggedIn, setRegistered } = useLogin();
     const history = useHistory();
 
-    const handleLogin = () => {
-        // check if there is a user with the same username and password
-
-        if (username == 'asd@gamil.com' && password == 'asdasd') {
-            setRegistered(true);
-            setLoggedIn(true);
-            history.replace('/');
-        } else {
-            setRegistered(false);
-            history.replace('/register');
-        }
+    const handleRegister = () => {
+        // post username and password to server
+        setRegistered(true)
+        setLoggedIn(true);
+        history.replace('/');
     };
 
     return (
@@ -29,7 +23,7 @@ const Login: React.FC = () => {
             <IonContent color={'light'}>
                 <IonHeader>
                     <IonToolbar>
-                        <IonTitle>Login</IonTitle>
+                        <IonTitle>Register</IonTitle>
                     </IonToolbar>
                 </IonHeader>
 
@@ -52,13 +46,18 @@ const Login: React.FC = () => {
                                 onIonChange={(e) => setPassword(e.detail.value!)}
                             />
                         </IonItem>
+                        <IonItem>
+                            <IonInput
+                                label="Confirm Password" labelPlacement="floating" fill="outline" placeholder="Confirm Password"
+                                type="password"
+                                value={password}
+                                onIonChange={(e) => setPassword(e.detail.value!)}
+                            />
+                        </IonItem>
                     </IonList>
 
                     <div className="ion-margin-horizontal">
-                        <IonButton expand="block" onClick={handleLogin}>
-                            Login
-                        </IonButton>
-                        <IonButton expand="block" fill="outline" routerLink='/register' routerDirection='forward'>
+                        <IonButton expand="block" onClick={handleRegister}>
                             Register
                         </IonButton>
                     </div>
@@ -68,4 +67,4 @@ const Login: React.FC = () => {
     );
 };
 
-export default Login;
+export default Register;

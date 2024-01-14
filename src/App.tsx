@@ -36,14 +36,15 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import { LoginProvider, useLogin } from './context/LoginContext';
+import Register from './pages/Register';
 
 setupIonicReact();
 
 const Taps: React.FC = () => {
-    // const { loggedIn } = useLogin();
-    // if (!loggedIn) {
-    //     return <Redirect to="/login" />
-    // }
+    const { loggedIn } = useLogin();
+    if (!loggedIn) {
+        return <Redirect to="/login" />
+    }
 
     return <>
         <IonTabs>
@@ -84,7 +85,15 @@ const App: React.FC = () => (
     <IonApp>
         <IonReactRouter>
             <LoginProvider>
-                <Login />
+                <IonRouterOutlet>
+                    <Route exact path="/login">
+                        <Login />
+                    </Route>
+                    <Route exact path="/register">
+                        <Register />
+                    </Route>
+                </IonRouterOutlet>
+
                 <Taps />
             </LoginProvider>
         </IonReactRouter>
