@@ -1,4 +1,4 @@
-/* src/components/CardContainer.css */
+/** src/components/CardContainer.css */
 .card {
     margin: 0;
 }
@@ -19,7 +19,7 @@
     animation: fadeIn 0.7s ease-in-out;
 }
 
-/* src/pages/Login.css */
+/** src/pages/Login.css */
 
 .login-container {
     text-align: center;
@@ -36,4 +36,11 @@
 
 ion-note {
     display: block;
+}
+
+/** src/pages/CardDetail.css */
+
+.video-container {
+    width: 100%;
+    height: auto;
 }

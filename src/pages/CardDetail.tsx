@@ -1,9 +1,7 @@
 import React from 'react';
-import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar, IonImg } from '@ionic/react';
+import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar } from '@ionic/react';
 import { useLocation, useParams } from 'react-router-dom';
 import { CardList } from '../data/data';
-
-const vid = `https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4`
 
 const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -39,11 +37,12 @@ const CardDetail: React.FC = () => {
                 <div
                     className="ion-margin-top video-container"
                 >
-                    <video width="100%" height="auto" controls>
+                    <video width="100%" height="100%" controls>
                         <source src={card?.video} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
+                <p>{card?.content}</p>
             </IonContent>
         </IonPage>
     );
