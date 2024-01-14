@@ -30,3 +30,10 @@ export const Tab3CardList = [
     { id: '5', title: 'Card 2', subtitle: 'Subtitle 2', content: 'Content for Card 2' },
     { id: '6', title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3' },
 ];
+
+export const CardList: { [key: string]: CardType[] } = {
+    'tab1': Tab1CardList,
+    'tab2': Tab2CardList,
+    'tab3': Tab3CardList,
+    'vid': []
+}
