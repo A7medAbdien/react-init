@@ -3,6 +3,8 @@ import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, 
 import { useLocation, useParams } from 'react-router-dom';
 import { CardList } from '../data/data';
 
+const vid = `https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4`
+
 const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
     const location = useLocation();
@@ -34,12 +36,15 @@ const CardDetail: React.FC = () => {
 
             <IonContent className="ion-padding ion-text-center" color={'light'}>
                 <h1>{card?.title}</h1>
-                <IonImg
+                <div
                     className="ion-margin-top"
-                    style={{ height: '300px' }}
-                    src={card?.image}
-                    alt={card?.title}
-                />
+                    style={{ height: 'auto', width: '100%', margin: 'auto' }}
+                >
+                    <video width="100%" height="auto" controls>
+                        <source src={vid} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </IonContent>
         </IonPage>
     );
