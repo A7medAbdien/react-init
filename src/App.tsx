@@ -37,34 +37,43 @@ import CardDetail from './pages/CardDetail';
 import { TabsData } from './data/data';
 import Tab from './components/Tab';
 import Profile from './pages/Profile';
+import { Links } from './data/Strings';
+import Landing from './pages/Landing';
 
 setupIonicReact();
 
 const Taps: React.FC = () => {
+
     const { loggedIn } = useGlobal();
     if (!loggedIn) {
         return <Redirect to="/login" />
     }
+    const baseUrl = Links.tabs
+    const tabsPaths = [...TabsData.map((t) => `${baseUrl}${t.path}/:cardId`)];
 
     return <>
         <IonTabs>
             <IonRouterOutlet>
-                <Route exact path={[...TabsData.map((t) => `${t.path}/:cardId`)]} >
-                    <CardDetail />
+
+                <Route exact path={[baseUrl, '/']}>
+                    <Redirect to={baseUrl + TabsData[0].path} />
                 </Route>
                 {TabsData.map((tab) => (
-                    <Route exact path={tab.path} key={tab.name}>
-                        <Tab name={tab.name} path={tab.path} cardList={tab.cardList} />
+                    <Route exact path={baseUrl + tab.path} key={tab.name}>
+                        <Tab name={tab.name} path={baseUrl + tab.path} cardList={tab.cardList} />
                     </Route>
                 ))}
-                <Route exact path="/">
-                    <Redirect to={TabsData[0].path} />
-                </Route>
+                {tabsPaths.map((path, i) =>
+                    <Route key={i} exact path={path} >
+                        <CardDetail />
+                    </Route>
+                )}
+
             </IonRouterOutlet>
 
             <IonTabBar slot="bottom">
                 {TabsData.map((tab) => (
-                    <IonTabButton key={tab.name} tab={tab.name} href={tab.path}>
+                    <IonTabButton key={tab.name} tab={baseUrl + tab.name} href={baseUrl + tab.path}>
                         <IonIcon aria-hidden="true" icon={tab.icon} />
                         <IonLabel>{tab.name}</IonLabel>
                     </IonTabButton>
@@ -85,13 +94,12 @@ const App: React.FC = () => (
                     <Route exact path="/register">
                         <Register />
                     </Route>
-                    <Route exact path="/profile">
-
+                    <Route path={Links.tabs}>
+                        <Taps />
+                        <Profile />
                     </Route>
                 </IonRouterOutlet>
 
-                <Taps />
-                <Profile />
             </GlobalProvider>
         </IonReactRouter>
     </IonApp>

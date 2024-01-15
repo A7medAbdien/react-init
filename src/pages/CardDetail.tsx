@@ -8,7 +8,7 @@ const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
     const location = useLocation();
     const { cardId } = useParams<{ cardId: string, otherParam: string }>();
-    const cardCategory = location.pathname.split('/')[1]
+    const cardCategory = location.pathname.split('/')[2]
 
     const tab = TabsData.find(t => t.path === `/${cardCategory}`)
     if (!tab) {

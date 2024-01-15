@@ -3,6 +3,7 @@ export const Links = {
     login: '/login',
     register: '/register',
     profile: '/profile',
+    tabs: '/tabs',
 }
 
 export const LoginStrings = {

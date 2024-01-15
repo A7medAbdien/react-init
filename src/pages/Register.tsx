@@ -2,7 +2,7 @@ import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonList, IonModal,
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
-import { RegisterStrings } from '../data/Strings';
+import { Links, RegisterStrings } from '../data/Strings';
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -15,7 +15,7 @@ const Register: React.FC = () => {
         // post username and password to server
         setRegistered(true)
         setLoggedIn(true);
-        history.replace('/');
+        history.replace(Links.tabs);
     };
 
     return (

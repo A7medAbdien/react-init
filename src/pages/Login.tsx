@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
 import { Links, LoginStrings } from '../data/Strings';
@@ -8,7 +8,7 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const { setLoggedIn, setRegistered } = useGlobal();
+    const { setLoggedIn, setRegistered, loggedIn } = useGlobal();
     const history = useHistory();
 
     const handleLogin = () => {
@@ -17,13 +17,18 @@ const Login: React.FC = () => {
         if (username == LoginStrings.username && password == LoginStrings.password) {
             setRegistered(true);
             setLoggedIn(true);
-            history.replace(Links.home);
+            history.replace(Links.tabs);
         } else {
             console.log(username, password);
             setRegistered(false);
             history.replace(Links.register);
         }
     };
+
+    useEffect(() => {
+        if (loggedIn)
+            history.replace(Links.tabs);
+    }, [])
 
     return (
         <IonPage >
