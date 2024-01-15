@@ -46,7 +46,7 @@ const Taps: React.FC = () => {
 
     const { loggedIn } = useGlobal();
     if (!loggedIn) {
-        return <Redirect to="/login" />
+        return <Redirect to={Links.base} />
     }
     const baseUrl = Links.tabs
     const tabsPaths = [...TabsData.map((t) => `${baseUrl}${t.path}/:cardId`)];
@@ -55,7 +55,7 @@ const Taps: React.FC = () => {
         <IonTabs>
             <IonRouterOutlet>
 
-                <Route exact path={[baseUrl, '/']}>
+                <Route exact path={[baseUrl]}>
                     <Redirect to={baseUrl + TabsData[0].path} />
                 </Route>
                 {TabsData.map((tab) => (
@@ -88,15 +88,18 @@ const App: React.FC = () => (
         <IonReactRouter>
             <GlobalProvider>
                 <IonRouterOutlet>
-                    <Route exact path="/login">
+                    <Route exact path={Links.login}>
                         <Login />
                     </Route>
-                    <Route exact path="/register">
+                    <Route exact path={Links.register}>
                         <Register />
                     </Route>
                     <Route path={Links.tabs}>
                         <Taps />
                         <Profile />
+                    </Route>
+                    <Route exact path={Links.base}>
+                        <Landing />
                     </Route>
                 </IonRouterOutlet>
 

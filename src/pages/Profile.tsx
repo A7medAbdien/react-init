@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { Redirect, useHistory } from 'react-router-dom';
 import { close } from 'ionicons/icons';
-import { ProfileStrings } from '../data/Strings';
+import { Links, ProfileStrings } from '../data/Strings';
 
 const Profile: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -12,7 +12,7 @@ const Profile: React.FC = () => {
     const { setLoggedIn, setRegistered, profileOpen, setProfileOpen, loggedIn } = useGlobal();
     const history = useHistory();
     if (!loggedIn) {
-        return <Redirect to="/login" />
+        return <Redirect to={Links.base} />
     }
 
     const handleSave = () => {

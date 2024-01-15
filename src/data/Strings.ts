@@ -1,9 +1,17 @@
 export const Links = {
-    home: '/',
+    base: '/',
     login: '/login',
     register: '/register',
     profile: '/profile',
     tabs: '/tabs',
+}
+
+export const LandingStrings = {
+    title: 'Welcome',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    loginButton: 'Login',
+    registerButton: 'Register',
+    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
 }
 
 export const LoginStrings = {
