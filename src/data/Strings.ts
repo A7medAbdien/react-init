@@ -16,6 +16,7 @@ export const LandingStrings = {
 
 export const LoginStrings = {
     title: 'Login',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     loginButton: 'Login',

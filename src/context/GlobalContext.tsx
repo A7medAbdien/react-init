@@ -18,8 +18,8 @@ interface GlobalProviderProps {
 }
 
 export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
-    const [loggedIn, setLoggedIn] = useState(true);
-    const [registered, setRegistered] = useState(true);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [registered, setRegistered] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
 
     return (

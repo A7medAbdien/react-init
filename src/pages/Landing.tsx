@@ -16,7 +16,6 @@ const Landing: React.FC = () => {
             <IonContent>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        {/* <IonTitle size='large'>{LandingStrings.title}</IonTitle> */}
                         <div className='landing-icon-container'>
                             <IonImg className='landing-icon' src={LandingStrings.icon} />
                         </div>
