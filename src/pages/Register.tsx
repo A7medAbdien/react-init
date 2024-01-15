@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
@@ -20,44 +20,68 @@ const Register: React.FC = () => {
 
     return (
         <IonPage >
-            <IonContent color={'light'}>
-                <IonHeader>
+            <IonHeader>
+                <IonToolbar>
+                    <IonTitle>{RegisterStrings.title}</IonTitle>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent>
+                <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle>{RegisterStrings.title}</IonTitle>
+                        <div className='landing-icon-container'>
+                            <IonImg className='landing-icon' src={RegisterStrings.icon} />
+                        </div>
+                        <IonButtons className='toolbar-button' slot="start">
+                            <IonBackButton defaultHref="/" />
+                        </IonButtons>
                     </IonToolbar>
                 </IonHeader>
 
 
                 <div className="login-container">
-                    <IonList inset={true}>
-                        <IonItem>
-                            <IonInput
-                                label={RegisterStrings.usernameLabel} labelPlacement="floating" fill="outline" placeholder="username"
-                                type="text"
-                                value={username}
-                                onIonChange={(e) => setUsername(e.detail.value!)}
-                            />
-                        </IonItem>
-                        <IonItem>
-                            <IonInput
-                                label={RegisterStrings.passwordLabel} labelPlacement="floating" fill="outline" placeholder="password"
-                                type="password"
-                                value={password}
-                                onIonChange={(e) => setPassword(e.detail.value!)}
-                            />
-                        </IonItem>
-                        <IonItem>
-                            <IonInput
-                                label={RegisterStrings.confirmPasswordLabel} labelPlacement="floating" fill="outline" placeholder="Confirm Password"
-                                type="password"
-                                value={password}
-                                onIonChange={(e) => setPassword(e.detail.value!)}
-                            />
-                        </IonItem>
-                    </IonList>
+                    <div className="ion-margin-horizontal login-title-container">
+                        <IonTitle size='large'>{RegisterStrings.title}</IonTitle>
+                    </div>
 
-                    <div className="ion-margin-horizontal">
-                        <IonButton expand="block" onClick={handleRegister}>
+                    <div className="ion-margin-horizontal login-input-container">
+                        <h2 className='login-input-label'>
+                            {RegisterStrings.usernameLabel}
+                        </h2>
+                        <IonInput
+                            className='login-input'
+                            placeholder="username"
+                            type="text"
+                            // value={username}
+                            onIonChange={(e) => setUsername(e.detail.value!)}
+                        />
+                    </div>
+                    <div className="ion-margin-horizontal login-input-container">
+                        <h2 className='login-input-label'>
+                            {RegisterStrings.passwordLabel}
+                        </h2>
+                        <IonInput
+                            className='login-input'
+                            placeholder="password"
+                            type="password"
+                            // value={password}
+                            onIonChange={(e) => setPassword(e.detail.value!)}
+                        />
+                    </div>
+                    <div className="ion-margin-horizontal login-input-container">
+                        <h2 className='login-input-label'>
+                            {RegisterStrings.confirmPasswordLabel}
+                        </h2>
+                        <IonInput
+                            className='login-input'
+                            placeholder="password"
+                            type="password"
+                            // value={password}
+                            onIonChange={(e) => setPassword(e.detail.value!)}
+                        />
+                    </div>
+
+                    <div className="ion-margin-horizontal login-button">
+                        <IonButton expand="block" size='large' onClick={handleRegister}>
                             {RegisterStrings.registerButton}
                         </IonButton>
                     </div>

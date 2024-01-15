@@ -28,6 +28,7 @@ export const LoginStrings = {
 
 export const RegisterStrings = {
     title: 'Register',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     confirmPasswordLabel: 'Confirm Password',
