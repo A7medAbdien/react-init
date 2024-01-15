@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
@@ -43,6 +43,9 @@ const Login: React.FC = () => {
                         <div className='landing-icon-container'>
                             <IonImg className='landing-icon' src={LoginStrings.icon} />
                         </div>
+                        <IonButtons className='toolbar-button' slot="start">
+                            <IonBackButton defaultHref="/" />
+                        </IonButtons>
                     </IonToolbar>
                 </IonHeader>
 

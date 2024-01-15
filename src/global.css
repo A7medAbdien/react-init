@@ -29,6 +29,11 @@
     left: 0;
 }
 
+/** Glob  */
+
+.toolbar-button {
+    position: absolute;
+}
 
 /** Login */
 
