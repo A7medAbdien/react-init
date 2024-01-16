@@ -1,3 +1,5 @@
+import Category from "../pages/Category"
+
 export const Links = {
     base: '/',
     login: '/login',
@@ -5,6 +7,7 @@ export const Links = {
     profile: '/profile',
     subscription: '/subscription',
     payment: '/payment',
+    category: '/category',
     tabs: '/tabs',
 }
 
@@ -52,7 +55,8 @@ export const PaymentStrings = {
     icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     inputLabel: 'Location Link',
     registerButton: 'Done',
-    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
+    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    link: Links.category
 }
 
 export const ProfileStrings = {

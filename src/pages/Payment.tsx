@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonButton, IonImg, IonInput } from '@ionic/react';
 import { useParams } from 'react-router-dom';
-import { PaymentStrings, Links } from '../data/Strings';
+import { PaymentStrings } from '../data/Strings';
 
 const Payment: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -38,7 +38,7 @@ const Payment: React.FC = () => {
                             <IonButton
                                 className='payment-button'
                                 size="large"
-                                routerLink={Links.register}
+                                routerLink={PaymentStrings.link}
                             >
                                 {PaymentStrings.registerButton}
                             </IonButton>

@@ -41,6 +41,7 @@ import { Links } from './data/Strings';
 import Landing from './pages/Landing';
 import Subscription from './pages/Subscription';
 import Payment from './pages/Payment';
+import Category from './pages/Category';
 
 setupIonicReact();
 
@@ -104,6 +105,9 @@ const App: React.FC = () => (
                     </Route>
                     <Route exact path={`${Links.payment}/:subscriptionId`}>
                         <Payment />
+                    </Route>
+                    <Route exact path={Links.category}>
+                        <Category />
                     </Route>
                     <Route path={Links.tabs}>
                         <Taps />
