@@ -81,24 +81,28 @@ export const TabsData = [
 
 export const SubscriptionCardData: SubscriptionCardType[] = [
     {
+        id: 1,
         duration: '1 Month',
         price: 5,
         bgColor: '#093490',
         textColor: '#000',
     },
     {
+        id: 2,
         duration: '1 Month',
         price: 5,
         bgColor: '#093490',
         textColor: '#000',
     },
     {
+        id: 3,
         duration: '1 Month',
         price: 5,
         bgColor: '#093490',
         textColor: '#000',
     },
     {
+        id: 4,
         duration: '1 Month',
         price: 5,
         bgColor: '#093490',

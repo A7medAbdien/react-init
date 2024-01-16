@@ -4,10 +4,10 @@ import { SubscriptionCardData } from '../data/data';
 import { SubscriptionCardType } from '../types/Types';
 import { Link } from 'react-router-dom';
 
-const SubscriptionCard: React.FC<SubscriptionCardType> = ({ price, duration, bgColor, textColor }) => {
+const SubscriptionCard: React.FC<SubscriptionCardType> = ({ id, price, duration, bgColor, textColor }) => {
     return <>
         <IonCol className='subscription-card' style={{ color: textColor, borderColor: bgColor, backgroundColor: bgColor }}>
-            <Link style={{ textDecoration: 'none' }} to={`${Links.payment}/${price}`}>
+            <Link style={{ textDecoration: 'none' }} to={`${Links.payment}/${id}`}>
                 <div className="subscription-price-container" style={{ borderColor: bgColor }}>
                     <div className="subscription-price-container inner">
                         <h3>{price} {SubscriptionStrings.concurrency}</h3>

@@ -40,6 +40,7 @@ import Profile from './pages/Profile';
 import { Links } from './data/Strings';
 import Landing from './pages/Landing';
 import Subscription from './pages/Subscription';
+import Payment from './pages/Payment';
 
 setupIonicReact();
 
@@ -89,6 +90,9 @@ const App: React.FC = () => (
         <IonReactRouter>
             <GlobalProvider>
                 <IonRouterOutlet>
+                    <Route exact path={Links.base}>
+                        <Landing />
+                    </Route>
                     <Route exact path={Links.login}>
                         <Login />
                     </Route>
@@ -98,13 +102,14 @@ const App: React.FC = () => (
                     <Route exact path={Links.subscription}>
                         <Subscription />
                     </Route>
+                    <Route exact path={`${Links.payment}/:subscriptionId`}>
+                        <Payment />
+                    </Route>
                     <Route path={Links.tabs}>
                         <Taps />
                         <Profile />
                     </Route>
-                    <Route exact path={Links.base}>
-                        <Landing />
-                    </Route>
+
                 </IonRouterOutlet>
 
             </GlobalProvider>
