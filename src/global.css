@@ -134,6 +134,41 @@
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/** Payment */
+
+.payment-container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(50%);
+}
+
+.payment-input-label {
+    text-align: start;
+    /* margin-left: 1rem; */
+}
+
+.payment-input {
+    border-radius: 1rem;
+    margin: 0rem;
+    overflow: hidden;
+    height: 3.5rem;
+
+    font-size: 1.5rem;
+    --background: #373737;
+    --color: #fff;
+    --placeholder-color: #ddd;
+    --placeholder-opacity: 0.8;
+}
+
+.payment-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+}
+
 /** src/components/CardContainer.css */
 .card {
     margin: 0;
