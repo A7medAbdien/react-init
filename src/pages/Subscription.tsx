@@ -1,23 +1,22 @@
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { useState } from 'react';
-import { useGlobal } from '../context/GlobalContext';
-import { useHistory } from 'react-router-dom';
-import { Links, SubscriptionStrings } from '../data/Strings';
+import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { SubscriptionStrings } from '../data/Strings';
+import { SubscriptionCardData } from '../data/data';
+import { SubscriptionCardType } from '../types/Types';
+
+const SubscriptionCard: React.FC<SubscriptionCardType> = ({ price, duration, bgColor, textColor }) => {
+    return <>
+        <IonCol className='subscription-card' style={{ color: textColor, borderColor: bgColor, backgroundColor: bgColor }}>
+            <div className="subscription-price-container" style={{ borderColor: bgColor }}>
+                <div className="subscription-price-container inner">
+                    {price}
+                </div>
+            </div>
+            <h2>{duration}</h2>
+        </IonCol>
+    </>
+}
 
 const Subscription: React.FC = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    const { setLoggedIn, setRegistered } = useGlobal();
-    const history = useHistory();
-
-    const handleRegister = () => {
-        // post username and password to server
-        setRegistered(true)
-        setLoggedIn(true);
-        history.replace(Links.subscription);
-    };
-
     return (
         <IonPage >
             <IonHeader>
@@ -39,52 +38,20 @@ const Subscription: React.FC = () => {
 
 
                 <div className="login-container">
-                    <div className="ion-margin-horizontal login-title-container">
+                    <div className="ion-margin-horizontal">
                         <IonTitle size='large'>{SubscriptionStrings.title}</IonTitle>
                     </div>
 
-                    <div className="ion-margin-horizontal login-input-container">
-                        <h2 className='login-input-label'>
-                            {SubscriptionStrings.usernameLabel}
-                        </h2>
-                        <IonInput
-                            className='login-input'
-                            placeholder="username"
-                            type="text"
-                            // value={username}
-                            onIonChange={(e) => setUsername(e.detail.value!)}
-                        />
-                    </div>
-                    <div className="ion-margin-horizontal login-input-container">
-                        <h2 className='login-input-label'>
-                            {SubscriptionStrings.passwordLabel}
-                        </h2>
-                        <IonInput
-                            className='login-input'
-                            placeholder="password"
-                            type="password"
-                            // value={password}
-                            onIonChange={(e) => setPassword(e.detail.value!)}
-                        />
-                    </div>
-                    <div className="ion-margin-horizontal login-input-container">
-                        <h2 className='login-input-label'>
-                            {SubscriptionStrings.confirmPasswordLabel}
-                        </h2>
-                        <IonInput
-                            className='login-input'
-                            placeholder="password"
-                            type="password"
-                            // value={password}
-                            onIonChange={(e) => setPassword(e.detail.value!)}
-                        />
-                    </div>
-
-                    <div className="ion-margin-horizontal login-button">
-                        <IonButton expand="block" size='large' onClick={handleRegister}>
-                            {SubscriptionStrings.registerButton}
-                        </IonButton>
-                    </div>
+                    <IonGrid fixed={true}>
+                        <IonRow>
+                            <SubscriptionCard {...SubscriptionCardData[0]} />
+                            <SubscriptionCard {...SubscriptionCardData[1]} />
+                        </IonRow>
+                        <IonRow>
+                            <SubscriptionCard {...SubscriptionCardData[2]} />
+                            <SubscriptionCard {...SubscriptionCardData[3]} />
+                        </IonRow>
+                    </IonGrid>
                 </div>
             </IonContent>
         </IonPage>

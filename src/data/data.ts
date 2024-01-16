@@ -1,4 +1,4 @@
-import { CardType } from "../types/Types";
+import { CardType, SubscriptionCardType } from "../types/Types";
 import {
     ellipse,
     square,
@@ -76,5 +76,32 @@ export const TabsData = [
         path: '/tab3',
         icon: triangle,
         cardList: Tab3CardList,
+    },
+]
+
+export const SubscriptionCardData: SubscriptionCardType[] = [
+    {
+        duration: '1 Month',
+        price: '5 BD',
+        bgColor: '#093490',
+        textColor: '#000',
+    },
+    {
+        duration: '1 Month',
+        price: '5 BD',
+        bgColor: '#093490',
+        textColor: '#000',
+    },
+    {
+        duration: '1 Month',
+        price: '5 BD',
+        bgColor: '#093490',
+        textColor: '#000',
+    },
+    {
+        duration: '1 Month',
+        price: '5 BD',
+        bgColor: '#093490',
+        textColor: '#000',
     },
 ]

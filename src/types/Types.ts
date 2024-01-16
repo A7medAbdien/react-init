@@ -6,3 +6,10 @@ export interface CardType {
     subtitle: string;
     content: string
 };
+
+export interface SubscriptionCardType {
+    price: string;
+    duration: string;
+    bgColor: string;
+    textColor: string;
+};
