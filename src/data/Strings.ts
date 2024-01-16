@@ -4,6 +4,7 @@ export const Links = {
     register: '/register',
     profile: '/profile',
     subscription: '/subscription',
+    payment: '/payment',
     tabs: '/tabs',
 }
 
@@ -43,6 +44,7 @@ export const SubscriptionStrings = {
     passwordLabel: 'Password',
     confirmPasswordLabel: 'Confirm Password',
     registerButton: 'Register',
+    concurrency: 'BD',
 }
 
 export const ProfileStrings = {

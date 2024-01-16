@@ -8,7 +8,7 @@ export interface CardType {
 };
 
 export interface SubscriptionCardType {
-    price: string;
+    price: number;
     duration: string;
     bgColor: string;
     textColor: string;

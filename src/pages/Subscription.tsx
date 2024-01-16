@@ -1,17 +1,20 @@
 import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { SubscriptionStrings } from '../data/Strings';
+import { Links, SubscriptionStrings } from '../data/Strings';
 import { SubscriptionCardData } from '../data/data';
 import { SubscriptionCardType } from '../types/Types';
+import { Link } from 'react-router-dom';
 
 const SubscriptionCard: React.FC<SubscriptionCardType> = ({ price, duration, bgColor, textColor }) => {
     return <>
         <IonCol className='subscription-card' style={{ color: textColor, borderColor: bgColor, backgroundColor: bgColor }}>
-            <div className="subscription-price-container" style={{ borderColor: bgColor }}>
-                <div className="subscription-price-container inner">
-                    {price}
+            <Link style={{ textDecoration: 'none' }} to={`${Links.payment}/${price}`}>
+                <div className="subscription-price-container" style={{ borderColor: bgColor }}>
+                    <div className="subscription-price-container inner">
+                        <h3>{price} {SubscriptionStrings.concurrency}</h3>
+                    </div>
                 </div>
-            </div>
-            <h2>{duration}</h2>
+                <h2>{duration}</h2>
+            </Link>
         </IonCol>
     </>
 }
