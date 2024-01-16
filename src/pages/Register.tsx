@@ -15,7 +15,7 @@ const Register: React.FC = () => {
         // post username and password to server
         setRegistered(true)
         setLoggedIn(true);
-        history.replace(Links.tabs);
+        history.replace(Links.subscription);
     };
 
     return (

@@ -3,6 +3,7 @@ export const Links = {
     login: '/login',
     register: '/register',
     profile: '/profile',
+    subscription: '/subscription',
     tabs: '/tabs',
 }
 
@@ -28,6 +29,15 @@ export const LoginStrings = {
 
 export const RegisterStrings = {
     title: 'Register',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    usernameLabel: 'Username',
+    passwordLabel: 'Password',
+    confirmPasswordLabel: 'Confirm Password',
+    registerButton: 'Register',
+}
+
+export const SubscriptionStrings = {
+    title: 'Subscription',
     icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     usernameLabel: 'Username',
     passwordLabel: 'Password',

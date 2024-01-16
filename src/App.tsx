@@ -39,6 +39,7 @@ import Tab from './components/Tab';
 import Profile from './pages/Profile';
 import { Links } from './data/Strings';
 import Landing from './pages/Landing';
+import Subscription from './pages/Subscription';
 
 setupIonicReact();
 
@@ -93,6 +94,9 @@ const App: React.FC = () => (
                     </Route>
                     <Route exact path={Links.register}>
                         <Register />
+                    </Route>
+                    <Route exact path={Links.subscription}>
+                        <Subscription />
                     </Route>
                     <Route path={Links.tabs}>
                         <Taps />
