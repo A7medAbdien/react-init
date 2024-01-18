@@ -169,6 +169,24 @@
     align-items: end;
 }
 
+/** Category */
+
+.category-container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(20%);
+}
+
+.category-card {}
+
+.category-footer-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 /** src/components/CardContainer.css */
 .card {
     margin: 0;

@@ -1,3 +1,4 @@
+import { CategoryCardType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
     ellipse,
@@ -108,4 +109,31 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
         bgColor: '#093490',
         textColor: '#000',
     },
+]
+
+export const CategoryCardData: CategoryCardType[] = [
+    {
+        id: 1,
+        title: 'Category 1',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: '#093490',
+        textColor: '#000',
+        path: '/DS'
+    },
+    {
+        id: 2,
+        title: 'Category 2',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: '#093490',
+        textColor: '#000',
+        path: '/DF'
+    },
+    {
+        id: 3,
+        title: 'Category 3',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: '#093490',
+        textColor: '#000',
+        path: '/LD'
+    }
 ]

@@ -14,3 +14,12 @@ export interface SubscriptionCardType {
     bgColor: string;
     textColor: string;
 };
+
+export interface CategoryCardType {
+    id: number;
+    title: string;
+    icon: string;
+    bgColor: string;
+    textColor: string;
+    path: string;
+};

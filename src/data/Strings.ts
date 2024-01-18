@@ -59,6 +59,13 @@ export const PaymentStrings = {
     link: Links.category
 }
 
+export const CategoryStrings = {
+    title: 'Welcome',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    header: "Lorem ipsum dolor sit amet consectetur",
+    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
+}
+
 export const ProfileStrings = {
     title: 'Profile',
     usernameLabel: 'Username',
