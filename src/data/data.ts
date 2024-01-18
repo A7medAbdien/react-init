@@ -5,6 +5,7 @@ import {
     square,
     triangle
 } from 'ionicons/icons';
+import { Links } from './Strings';
 
 export const Tab1CardList: CardType[] = [
     {
@@ -118,7 +119,7 @@ export const CategoryCardData: CategoryCardType[] = [
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
         bgColor: '#093490',
         textColor: '#000',
-        path: '/DS'
+        path: Links.tabs
     },
     {
         id: 2,
@@ -126,7 +127,7 @@ export const CategoryCardData: CategoryCardType[] = [
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
         bgColor: '#093490',
         textColor: '#000',
-        path: '/DF'
+        path: Links.tabs
     },
     {
         id: 3,
@@ -134,6 +135,6 @@ export const CategoryCardData: CategoryCardType[] = [
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
         bgColor: '#093490',
         textColor: '#000',
-        path: '/LD'
+        path: Links.tabs
     }
 ]

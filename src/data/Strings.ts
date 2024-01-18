@@ -28,6 +28,8 @@ export const LoginStrings = {
     registerButton: 'Register',
     username: 'asd@gmail.com',
     password: 'asdasd',
+    loginSuccessLink: Links.tabs,
+    loginFailLink: Links.register
 }
 
 

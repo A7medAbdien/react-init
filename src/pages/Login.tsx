@@ -17,17 +17,17 @@ const Login: React.FC = () => {
         if (username == LoginStrings.username && password == LoginStrings.password) {
             setRegistered(true);
             setLoggedIn(true);
-            history.replace(Links.subscription);
+            history.replace(LoginStrings.loginSuccessLink);
         } else {
             console.log(username, password);
             setRegistered(false);
-            history.replace(Links.register);
+            history.replace(LoginStrings.loginFailLink);
         }
     };
 
     useEffect(() => {
         if (loggedIn)
-            history.replace(Links.tabs);
+            history.replace(LoginStrings.loginSuccessLink);
     }, [])
 
     return (
