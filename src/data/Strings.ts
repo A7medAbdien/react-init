@@ -9,6 +9,8 @@ export const Links = {
     payment: '/payment',
     category: '/category',
     tabs: '/tabs',
+    contact: '/contact',
+    about: '/about',
 }
 
 export const LandingStrings = {
@@ -31,7 +33,6 @@ export const LoginStrings = {
     loginSuccessLink: Links.tabs,
     loginFailLink: Links.register
 }
-
 
 export const RegisterStrings = {
     title: 'Register',
@@ -70,9 +71,11 @@ export const CategoryStrings = {
 
 export const ProfileStrings = {
     title: 'Profile',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
-    confirmPasswordLabel: 'Confirm Password',
     saveButton: 'Save',
-    defaultProfileImage: 'https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1'
+    defaultProfileImage: 'https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    username: 'asd@gmail.com',
+    password: 'asdasd',
 }

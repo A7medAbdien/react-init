@@ -1,43 +1,79 @@
-import { IonAvatar, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonList, IonModal, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAvatar, IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonList, IonModal, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
-import { Redirect, useHistory } from 'react-router-dom';
-import { close } from 'ionicons/icons';
+import { Link, Redirect, useHistory } from 'react-router-dom';
+import { close, createOutline, helpCircleOutline, pencil } from 'ionicons/icons';
 import { Links, ProfileStrings } from '../data/Strings';
+import { ProfileLinkType } from '../types/Types';
+import { ProfileLinkData } from '../data/data';
 
+const ProfileLink: React.FC<ProfileLinkType> = ({ path, text, icon, color }) => {
+    return <Link to={path} style={{ color }}>
+        <h1 className='profile-links'>
+            <IonIcon icon={icon} size="large"></IonIcon>
+            {text}
+        </h1>
+    </Link>
+}
+
+interface ProfileInputType {
+    fieldLabel: string;
+    value: string;
+    setValue: (value: string) => void;
+    type: string;
+}
+
+
+const ProfileInput: React.FC<ProfileInputType> = ({ fieldLabel, value, setValue, type }) => {
+    const [edit, setEdit] = useState(false);
+    return <>
+        <div className="ion-margin-horizontal login-input-container">
+
+            <h2 className='profile-input-label'>
+                {fieldLabel}
+                <IonIcon onClick={() => setEdit(!edit)} icon={createOutline} size="large"></IonIcon>
+            </h2>
+            <IonInput
+                disabled={!edit}
+                className='login-input'
+                type={type as any}
+                value={value}
+                onIonChange={(e) => setValue(e.detail.value!)}
+            />
+        </div >
+    </>
+}
 const Profile: React.FC = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState(ProfileStrings.username);
+    const [password, setPassword] = useState(ProfileStrings.password);
 
-    const { setLoggedIn, setRegistered, profileOpen, setProfileOpen, loggedIn } = useGlobal();
-    const history = useHistory();
+    const { profileOpen, setProfileOpen, loggedIn } = useGlobal();
     if (!loggedIn) {
         return <Redirect to={Links.base} />
     }
 
-    const handleSave = () => {
-        // post username and password to server
-        setRegistered(true)
-        setLoggedIn(true);
-        history.replace('/');
-    };
-
     return (
         <IonModal isOpen={profileOpen} >
-            <IonContent color={'light'}>
-                <IonHeader>
+            <IonHeader>
+                <IonToolbar>
+                    <IonTitle>{ProfileStrings.title}</IonTitle>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent >
+                <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonButtons onClick={() => setProfileOpen(false)} slot="start">
+                        <div className='landing-icon-container'>
+                            <IonImg className='landing-icon' src={ProfileStrings.icon} />
+                        </div>
+                        <IonButtons className='toolbar-button' onClick={() => setProfileOpen(false)} slot="start">
                             <IonButton>
                                 <IonIcon icon={close} size="large"></IonIcon>
                             </IonButton>
                         </IonButtons>
-                        <IonTitle>{ProfileStrings.title}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
+                <div className="profile-container">
 
-
-                <div className="login-container">
                     <div className="profile-img-container">
                         <IonAvatar className='profile-img' >
                             <img
@@ -46,43 +82,22 @@ const Profile: React.FC = () => {
                                 src={ProfileStrings.defaultProfileImage}
                             />
                         </IonAvatar>
+                        <h4>Change Profile Picture</h4>
                     </div>
 
-                    <IonList inset={true}>
-                        <IonItem>
-                            <IonInput
-                                label={ProfileStrings.usernameLabel} labelPlacement="floating" fill="outline" placeholder="username"
-                                type="text"
-                                value={username}
-                                onIonChange={(e) => setUsername(e.detail.value!)}
-                            />
-                        </IonItem>
-                        <IonItem>
-                            <IonInput
-                                label={ProfileStrings.passwordLabel} labelPlacement="floating" fill="outline" placeholder="password"
-                                type="password"
-                                value={password}
-                                onIonChange={(e) => setPassword(e.detail.value!)}
-                            />
-                        </IonItem>
-                        <IonItem>
-                            <IonInput
-                                label={ProfileStrings.confirmPasswordLabel} labelPlacement="floating" fill="outline" placeholder="Confirm Password"
-                                type="password"
-                                value={password}
-                                onIonChange={(e) => setPassword(e.detail.value!)}
-                            />
-                        </IonItem>
-                    </IonList>
+                    <div className="profile-data-container">
 
-                    <div className="ion-margin-horizontal">
-                        <IonButton expand="block" onClick={handleSave}>
-                            {ProfileStrings.saveButton}
-                        </IonButton>
+                        <ProfileInput fieldLabel={ProfileStrings.usernameLabel} value={username} setValue={setUsername} type='text' />
+                        <ProfileInput fieldLabel={ProfileStrings.passwordLabel} value={password} setValue={setPassword} type='password' />
+
+                        <div className="ion-margin-horizontal">
+                            {ProfileLinkData.map((link, i) => <ProfileLink {...link} key={i} />)}
+                        </div>
                     </div>
+
                 </div>
             </IonContent>
-        </IonModal>
+        </IonModal >
     );
 };
 

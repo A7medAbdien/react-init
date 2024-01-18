@@ -23,3 +23,10 @@ export interface CategoryCardType {
     textColor: string;
     path: string;
 };
+
+export interface ProfileLinkType {
+    path: string;
+    icon: string;
+    text: string;
+    color: string;
+}

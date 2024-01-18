@@ -1,7 +1,10 @@
-import { CategoryCardType } from './../types/Types';
+import { CategoryCardType, ProfileLinkType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
+    alertCircleOutline,
     ellipse,
+    helpCircle,
+    helpCircleOutline,
     square,
     triangle
 } from 'ionicons/icons';
@@ -137,4 +140,19 @@ export const CategoryCardData: CategoryCardType[] = [
         textColor: '#000',
         path: Links.tabs
     }
+]
+
+export const ProfileLinkData: ProfileLinkType[] = [
+    {
+        path: Links.contact,
+        icon: helpCircle,
+        text: 'Contact Us.',
+        color: '#fff'
+    },
+    {
+        path: Links.about,
+        icon: alertCircleOutline,
+        text: 'About Us.',
+        color: '#000'
+    },
 ]
