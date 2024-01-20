@@ -118,26 +118,26 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
 export const CategoryCardData: CategoryCardType[] = [
     {
         id: 1,
-        title: 'Category 1',
+        title: 'Down Syndrome',
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
-        bgColor: '#093490',
-        textColor: '#000',
+        bgColor: Colors.sky,
+        textColor: Colors.navy,
         path: Links.tabs
     },
     {
         id: 2,
-        title: 'Category 2',
+        title: 'Deaf-Mute',
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
-        bgColor: '#093490',
-        textColor: '#000',
+        bgColor: Colors.navy,
+        textColor: Colors.orange,
         path: Links.tabs
     },
     {
         id: 3,
-        title: 'Category 3',
+        title: 'Learning Difficulty',
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
-        bgColor: '#093490',
-        textColor: '#000',
+        bgColor: Colors.orange,
+        textColor: Colors.sky,
         path: Links.tabs
     }
 ]

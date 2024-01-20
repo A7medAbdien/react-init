@@ -10,12 +10,15 @@ import BackButton from '../components/BackButton';
 const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgColor, textColor }) => {
     return <>
         <Link style={{ textDecoration: 'none' }} to={path}>
-            <IonCard className='category-card' routerLink={Links.login} style={{ color: textColor, backgroundColor: bgColor }}>
-                <IonItem lines={'none'} >
+            <IonCard routerLink={Links.login}>
+                <IonItem
+                    style={{ '--background': bgColor, '--color': textColor }}
+                    lines={'none'}
+                >
                     <IonThumbnail slot="end">
-                        <img alt="Silhouette of mountains" src={icon} />
+                        <img alt={title} src={icon} />
                     </IonThumbnail>
-                    <IonLabel>{title}</IonLabel>
+                    <h4>{title}</h4>
                 </IonItem>
             </IonCard>
         </Link>
