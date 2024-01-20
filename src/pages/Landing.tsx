@@ -25,10 +25,10 @@ const Landing: React.FC = () => {
 
                 <div className="landing-container">
                     <div className="ion-margin-horizontal">
-                        <IonButton className='landing-button' expand="block" shape="round" size="large" routerLink={Links.login}>
+                        <IonButton color={'secondary'} className='landing-button' expand="block" shape="round" size="large" routerLink={Links.login}>
                             {LandingStrings.loginButton}
                         </IonButton>
-                        <IonButton className='landing-button' expand="block" shape="round" size="large" routerLink={Links.register}>
+                        <IonButton color={'secondary'} className='landing-button' expand="block" shape="round" size="large" routerLink={Links.register}>
                             {LandingStrings.registerButton}
                         </IonButton>
                     </div>
