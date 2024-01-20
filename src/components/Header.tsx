@@ -26,10 +26,14 @@ const Header: React.FC<ContainerProps> = ({ name, color = 'secondary' }) => {
                     <IonImg className='landing-icon' src={LoginStrings.icon} />
                 </div>
                 {!isBase && <BackButton color={color} />}
-                {isTabs && <IonButtons collapse={true} slot="end">
+                {isTabs && <IonButtons collapse={true} slot="end" className="profile-icon">
                     <IonButton onClick={() => setProfileOpen(true)}>
-                        <IonAvatar>
-                            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                        <IonAvatar >
+                            <img
+                                // style={{ width: "50px", height: "50px" }}
+                                alt="Silhouette of a person's head"
+                                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                            />
                         </IonAvatar>
                     </IonButton>
                 </IonButtons>}
