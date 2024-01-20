@@ -110,9 +110,14 @@ export const ProfileStrings = {
 }
 
 export const ContactStrings = {
-    title: 'Welcome',
+    title: 'Contact us',
     icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     loginButton: 'Login',
     registerButton: 'Register',
     footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
+}
+
+export const AboutStrings = {
+    title: 'About Menkom',
+    content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quae non eius dicta consectetur! Animi, itaque ea. Laudantium iste eos, unde nihil excepturi sapiente repudiandae, mollitia consectetur modi eligendi ex.`
 }

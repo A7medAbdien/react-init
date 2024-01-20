@@ -1,4 +1,4 @@
-import { CategoryCardType, ProfileLinkType } from './../types/Types';
+import { CategoryCardType, ContactType, ProfileLinkType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
     alertCircleOutline,
@@ -8,7 +8,7 @@ import {
     square,
     triangle
 } from 'ionicons/icons';
-import { Colors, Links } from './Strings';
+import { Colors, Links, ContactStrings } from './Strings';
 
 export const Tab1CardList: CardType[] = [
     {
@@ -159,6 +159,27 @@ export const ProfileLinkData: ProfileLinkType[] = [
         path: Links.about,
         icon: alertCircleOutline,
         text: 'About Us.',
+        color: Colors.sky,
+    },
+]
+
+export const ContactData: ContactType[] = [
+    {
+        path: 'https://www.instagram.com/',
+        icon: helpCircle,
+        text: '@menkom.bh',
+        color: Colors.navy,
+    },
+    {
+        path: 'https://www.instagram.com/',
+        icon: helpCircle,
+        text: 'Menkom505@gmail.com',
+        color: Colors.orange,
+    },
+    {
+        path: 'https://www.instagram.com/',
+        icon: helpCircle,
+        text: '+973 3389 4882',
         color: Colors.sky,
     },
 ]

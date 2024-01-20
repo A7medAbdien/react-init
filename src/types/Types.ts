@@ -30,3 +30,10 @@ export interface ProfileLinkType {
     text: string;
     color: string;
 }
+
+export interface ContactType {
+    path: string;
+    icon: string;
+    text: string;
+    color: string;
+}

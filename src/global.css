@@ -331,3 +331,35 @@ ion-tab-bar {
     flex-direction: column;
     justify-content: space-between;
 }
+
+/** Contact  */
+.content-title {
+    margin-bottom: 3rem;
+}
+
+.content-page {
+    padding: 0 3.5rem;
+}
+
+.contact-button {
+    margin-top: 1rem;
+}
+
+.contact-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.content-text {
+    width: 90%;
+}
+
+/** About  */
+
+.about-content {
+    color: var(--beige);
+    padding: 0 2.5rem;
+}
