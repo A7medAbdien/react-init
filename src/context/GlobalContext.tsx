@@ -27,7 +27,6 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const { pathname } = useLocation();
 
     useEffect(() => {
-
         const rootElement = document.documentElement;
         if ((pathname.includes('category') || pathname.includes('tabs')) && !profileOpen && pathname.split('/').length < 4) {
             rootElement.style.setProperty('--ion-background-color', Colors.beige);
@@ -35,6 +34,10 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
             rootElement.style.setProperty('--ion-background-color', Colors.navy);
         }
     }, [pathname, profileOpen]);
+
+    useEffect(() => {
+        setProfileOpen(false)
+    }, [pathname])
 
     return (
         <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen }}>
