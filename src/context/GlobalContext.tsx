@@ -1,6 +1,8 @@
 // src/context/LoginContext.tsx
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { useLocation } from 'react-router';
+import { CategoryStrings, Colors } from '../data/Strings';
 
 interface GlobalContextProps {
     loggedIn: boolean;
@@ -21,6 +23,17 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [registered, setRegistered] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
+
+    const { pathname } = useLocation();
+    useEffect(() => {
+        // Check if the URL contains "category" or "tabs"
+        const rootElement = document.documentElement;
+        if (pathname.includes('category') || pathname.includes('tabs')) {
+            rootElement.style.setProperty('--ion-background-color', Colors.beige);
+        } else {
+            rootElement.style.setProperty('--ion-background-color', Colors.navy);
+        }
+    }, [pathname]);
 
     return (
         <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen }}>

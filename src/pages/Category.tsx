@@ -23,13 +23,6 @@ const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgCol
 }
 
 const Category: React.FC = () => {
-    useEffect(() => {
-        // Select the :root element
-        const rootElement = document.documentElement;
-
-        // Change the value of --ion-background-color
-        rootElement.style.setProperty('--ion-background-color', CategoryStrings.bgColor);
-    }, [])
 
     return (
         <IonPage >

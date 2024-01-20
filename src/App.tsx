@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useHistory, useLocation } from 'react-router-dom';
 import {
     IonApp,
     IonIcon,
@@ -37,11 +37,12 @@ import CardDetail from './pages/CardDetail';
 import { TabsData } from './data/data';
 import Tab from './components/Tab';
 import Profile from './pages/Profile';
-import { Links } from './data/Strings';
+import { CategoryStrings, Links } from './data/Strings';
 import Landing from './pages/Landing';
 import Subscription from './pages/Subscription';
 import Payment from './pages/Payment';
 import Category from './pages/Category';
+import { useEffect } from 'react';
 
 setupIonicReact();
 
@@ -86,8 +87,8 @@ const Taps: React.FC = () => {
     </>
 }
 
-const App: React.FC = () => (
-    <IonApp>
+const App: React.FC = () => {
+    return <IonApp>
         <IonReactRouter>
             <GlobalProvider>
                 <IonRouterOutlet>
@@ -119,7 +120,7 @@ const App: React.FC = () => (
             </GlobalProvider>
         </IonReactRouter>
     </IonApp>
-);
+};
 
 export default App;
 
