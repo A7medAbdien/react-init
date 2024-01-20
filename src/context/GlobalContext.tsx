@@ -25,10 +25,11 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const [profileOpen, setProfileOpen] = useState(false);
 
     const { pathname } = useLocation();
+
     useEffect(() => {
-        // Check if the URL contains "category" or "tabs"
+
         const rootElement = document.documentElement;
-        if ((pathname.includes('category') || pathname.includes('tabs') && !profileOpen)) {
+        if ((pathname.includes('category') || pathname.includes('tabs')) && !profileOpen && pathname.split('/').length < 4) {
             rootElement.style.setProperty('--ion-background-color', Colors.beige);
         } else {
             rootElement.style.setProperty('--ion-background-color', Colors.navy);

@@ -3,6 +3,7 @@ import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, 
 import { useLocation, useParams } from 'react-router-dom';
 import { TabsData } from '../data/data';
 import { useGlobal } from '../context/GlobalContext';
+import Header from '../components/Header';
 
 const CardDetail: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -20,33 +21,26 @@ const CardDetail: React.FC = () => {
 
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonButtons slot="start">
-                        <IonBackButton color={'secondary'} defaultHref="/" />
-                    </IonButtons>
-                    <IonTitle>{tab.name}</IonTitle>
-                    <IonButtons collapse={true} slot="end">
-                        <IonButton onClick={() => setProfileOpen(true)}>
-                            <IonAvatar>
-                                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-                            </IonAvatar>
-                        </IonButton>
-                    </IonButtons>
-                </IonToolbar>
-            </IonHeader>
+            <Header color='secondary' />
 
-            <IonContent className="ion-padding ion-text-center" color={'light'}>
-                <h1 className='fade-in'>{card?.title}</h1>
-                <div
-                    className="ion-margin-top video-container fade-in"
-                >
-                    <video width="100%" height="100%" controls>
-                        <source src={card?.video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+            <IonContent className="ion-text-center" color={'tertiary'}>
+                <div className="detail-container">
+
+                    <div className="ion-padding ">
+                        {/* <h1 className='fade-in'>{card?.title}</h1> */}
+                        <div
+                            className="ion-margin-top video-container fade-in"
+                        >
+                            <video width="100%" height="100%" controls>
+                                <source src={card?.video} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div className="detail-content-container">
+                        <p className='fade-in'>{card?.content}</p>
+                    </div>
                 </div>
-                <p className='fade-in'>{card?.content}</p>
             </IonContent>
         </IonPage>
     );
