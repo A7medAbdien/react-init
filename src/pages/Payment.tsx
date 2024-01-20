@@ -1,11 +1,14 @@
 import React from 'react';
-import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonButton, IonImg, IonInput } from '@ionic/react';
+import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonButton, IonImg, IonInput, IonButtons, IonIcon } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 import { PaymentStrings } from '../data/Strings';
+import { chevronBackOutline } from 'ionicons/icons';
+import BackButton from '../components/BackButton';
 
 const Payment: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
     const { subscriptionId } = useParams<{ subscriptionId: string }>();
+
 
     return (
         <IonPage >
@@ -20,6 +23,7 @@ const Payment: React.FC = () => {
                         <div className='landing-icon-container'>
                             <IonImg className='landing-icon' src={PaymentStrings.icon} />
                         </div>
+                        <BackButton />
                     </IonToolbar>
                 </IonHeader>
 

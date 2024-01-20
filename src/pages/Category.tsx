@@ -1,8 +1,10 @@
-import { IonCard, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonCard, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import { Links, CategoryStrings } from '../data/Strings';
 import { CategoryCardType } from '../types/Types';
 import { CategoryCardData } from '../data/data';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import BackButton from '../components/BackButton';
 
 
 const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgColor, textColor }) => {
@@ -21,6 +23,14 @@ const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgCol
 }
 
 const Category: React.FC = () => {
+    useEffect(() => {
+        // Select the :root element
+        const rootElement = document.documentElement;
+
+        // Change the value of --ion-background-color
+        rootElement.style.setProperty('--ion-background-color', CategoryStrings.bgColor);
+    }, [])
+
     return (
         <IonPage >
             <IonHeader>
@@ -34,6 +44,7 @@ const Category: React.FC = () => {
                         <div className='landing-icon-container'>
                             <IonImg className='landing-icon' src={CategoryStrings.icon} />
                         </div>
+                        <BackButton color='tertiary' />
                     </IonToolbar>
                 </IonHeader>
 

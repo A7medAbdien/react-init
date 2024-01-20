@@ -70,9 +70,10 @@ export const PaymentStrings = {
 }
 
 export const CategoryStrings = {
-    title: 'Welcome',
+    bgColor: Colors.beige,
+    title: 'Category',
     icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
-    header: "Lorem ipsum dolor sit amet consectetur",
+    header: "What are you using the app for?",
     footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
 }
 
