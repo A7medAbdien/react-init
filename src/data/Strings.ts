@@ -104,7 +104,8 @@ export const ProfileStrings = {
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     saveButton: 'Save',
-    defaultProfileImage: 'https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    // defaultProfileImage: 'https://images.pexels.com/photos/10917649/pexels-photo-10917649.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    defaultProfileImage: account,
     username: 'asd@gmail.com',
     password: 'asdasd',
 }

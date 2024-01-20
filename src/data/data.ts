@@ -82,6 +82,12 @@ export const TabsData = [
         icon: triangle,
         cardList: Tab3CardList,
     },
+    {
+        name: 'Tab 4',
+        path: '/tab4',
+        icon: triangle,
+        cardList: Tab3CardList,
+    },
 ]
 
 export const SubscriptionCardData: SubscriptionCardType[] = [

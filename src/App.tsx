@@ -75,7 +75,7 @@ const Taps: React.FC = () => {
 
             </IonRouterOutlet>
 
-            <IonTabBar slot="bottom">
+            <IonTabBar className='tab-bar' color={'secondary'} slot="bottom">
                 {TabsData.map((tab) => (
                     <IonTabButton key={tab.name} tab={baseUrl + tab.name} href={baseUrl + tab.path}>
                         <IonIcon aria-hidden="true" icon={tab.icon} />

@@ -8,6 +8,16 @@
     --orange: #D27151;
 }
 
+/** Glob  */
+
+.toolbar-button {
+    position: absolute;
+}
+
+ion-tab-bar {
+    --border: 0.2rem solid var(--navy);
+}
+
 /** Profile  */
 
 .profile-icon {
@@ -45,12 +55,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-}
-
-/** Glob  */
-
-.toolbar-button {
-    position: absolute;
 }
 
 /** Login */
