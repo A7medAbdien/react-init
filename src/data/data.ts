@@ -8,7 +8,7 @@ import {
     square,
     triangle
 } from 'ionicons/icons';
-import { Links } from './Strings';
+import { Colors, Links } from './Strings';
 
 export const Tab1CardList: CardType[] = [
     {
@@ -88,30 +88,30 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
     {
         id: 1,
         duration: '1 Month',
-        price: 5,
-        bgColor: '#093490',
-        textColor: '#000',
+        price: 2,
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
     },
     {
         id: 2,
-        duration: '1 Month',
+        duration: '3 Month',
         price: 5,
-        bgColor: '#093490',
-        textColor: '#000',
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
     },
     {
         id: 3,
-        duration: '1 Month',
-        price: 5,
-        bgColor: '#093490',
-        textColor: '#000',
+        duration: '7 Month',
+        price: 16,
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
     },
     {
         id: 4,
-        duration: '1 Month',
-        price: 5,
-        bgColor: '#093490',
-        textColor: '#000',
+        duration: '1 Year',
+        price: 19.5,
+        bgColor: Colors.navy,
+        textColor: Colors.sky,
     },
 ]
 

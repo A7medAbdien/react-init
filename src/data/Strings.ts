@@ -1,4 +1,4 @@
-const Colors = {
+export const Colors = {
     navy: "#163440",
     sky: "#75BAB2",
     beige: "#F6E5B8",

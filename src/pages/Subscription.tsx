@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 const SubscriptionCard: React.FC<SubscriptionCardType> = ({ id, price, duration, bgColor, textColor }) => {
     return <>
-        <IonCol className='subscription-card' style={{ color: textColor, borderColor: bgColor, backgroundColor: bgColor }}>
+        <IonCol className='subscription-card' style={{ borderColor: bgColor, backgroundColor: bgColor }}>
             <Link style={{ textDecoration: 'none' }} to={`${Links.payment}/${id}`}>
                 <div className="subscription-price-container" style={{ borderColor: bgColor }}>
-                    <div className="subscription-price-container inner">
+                    <div style={{ color: textColor }} className="subscription-price-container inner">
                         <h3>{price} {SubscriptionStrings.concurrency}</h3>
                     </div>
                 </div>
-                <h2>{duration}</h2>
+                <h2 style={{ color: textColor }}>{duration}</h2>
             </Link>
         </IonCol>
     </>
