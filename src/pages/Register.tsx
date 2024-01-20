@@ -32,7 +32,7 @@ const Register: React.FC = () => {
                             <IonImg className='landing-icon' src={RegisterStrings.icon} />
                         </div>
                         <IonButtons className='toolbar-button' slot="start">
-                            <IonBackButton defaultHref="/" />
+                            <IonBackButton color={'secondary'} defaultHref="/" />
                         </IonButtons>
                     </IonToolbar>
                 </IonHeader>

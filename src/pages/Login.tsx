@@ -44,7 +44,7 @@ const Login: React.FC = () => {
                             <IonImg className='landing-icon' src={LoginStrings.icon} />
                         </div>
                         <IonButtons className='toolbar-button' slot="start">
-                            <IonBackButton defaultHref="/" />
+                            <IonBackButton color={'secondary'} defaultHref="/" />
                         </IonButtons>
                     </IonToolbar>
                 </IonHeader>

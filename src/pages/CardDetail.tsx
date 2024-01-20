@@ -23,7 +23,7 @@ const CardDetail: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
-                        <IonBackButton defaultHref="/" />
+                        <IonBackButton color={'secondary'} defaultHref="/" />
                     </IonButtons>
                     <IonTitle>{tab.name}</IonTitle>
                     <IonButtons collapse={true} slot="end">
