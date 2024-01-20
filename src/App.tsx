@@ -43,6 +43,8 @@ import Subscription from './pages/Subscription';
 import Payment from './pages/Payment';
 import Category from './pages/Category';
 import { useEffect } from 'react';
+import Contact from './pages/Contact';
+import About from './pages/About';
 
 setupIonicReact();
 
@@ -113,6 +115,12 @@ const App: React.FC = () => {
                     <Route path={Links.tabs}>
                         <Taps />
                         <Profile />
+                    </Route>
+                    <Route exact path={Links.contact}>
+                        <Contact />
+                    </Route>
+                    <Route exact path={Links.about}>
+                        <About />
                     </Route>
 
                 </IonRouterOutlet>

@@ -33,7 +33,6 @@ export const Links = {
     about: '/about',
 }
 
-
 export const HeaderStrings = {
     defaultProfileIcon: account,
     // defaultProfileIcon: "https://ionicframework.com/docs/img/demos/avatar.svg",
@@ -108,4 +107,12 @@ export const ProfileStrings = {
     defaultProfileImage: account,
     username: 'asd@gmail.com',
     password: 'asdasd',
+}
+
+export const ContactStrings = {
+    title: 'Welcome',
+    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    loginButton: 'Login',
+    registerButton: 'Register',
+    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
 }
