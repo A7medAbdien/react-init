@@ -1,6 +1,18 @@
+/* *
+
+كحلي: #163440 بحري: #75BAB2 بيج: #F6E5B8 اصفر: #EDBF71 برتقالي: #D27151
+Navy: #163440 Sky: #75BAB2 Beige: #F6E5B8 Yellow: #EDBF71 Orange: #D27151
+
+* */
+
 :root {
     --main-color: #3498db;
     --secondary-color: #39db34;
+    --navy: #163440;
+    --sky: #75BAB2;
+    --beige: #F6E5B8;
+    --yellow: #EDBF71;
+    --orange: #D27151;
 }
 
 /** Landing page  */

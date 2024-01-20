@@ -1,4 +1,10 @@
-import Category from "../pages/Category"
+const Colors = {
+    navy: "#163440",
+    sky: "#75BAB2",
+    beige: "#F6E5B8",
+    yellow: "#EDBF71",
+    orange: "#D27151",
+}
 
 export const Links = {
     base: '/',
