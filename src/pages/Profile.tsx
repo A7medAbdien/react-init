@@ -23,7 +23,6 @@ interface ProfileInputType {
     type: string;
 }
 
-
 const ProfileInput: React.FC<ProfileInputType> = ({ fieldLabel, value, setValue, type }) => {
     const [edit, setEdit] = useState(false);
     return <>
@@ -82,7 +81,7 @@ const Profile: React.FC = () => {
                                 src={ProfileStrings.defaultProfileImage}
                             />
                         </IonAvatar>
-                        <h4>Change Profile Picture</h4>
+                        <h4 className='profile-img-label'>Change Profile Picture</h4>
                     </div>
 
                     <div className="profile-data-container">

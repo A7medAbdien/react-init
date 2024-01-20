@@ -28,12 +28,12 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     useEffect(() => {
         // Check if the URL contains "category" or "tabs"
         const rootElement = document.documentElement;
-        if (pathname.includes('category') || pathname.includes('tabs')) {
+        if ((pathname.includes('category') || pathname.includes('tabs') && !profileOpen)) {
             rootElement.style.setProperty('--ion-background-color', Colors.beige);
         } else {
             rootElement.style.setProperty('--ion-background-color', Colors.navy);
         }
-    }, [pathname]);
+    }, [pathname, profileOpen]);
 
     return (
         <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen }}>
