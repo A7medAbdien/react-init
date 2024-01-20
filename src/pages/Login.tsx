@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
 import { Links, LoginStrings } from '../data/Strings';
+import Header from '../components/Header';
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -32,24 +33,8 @@ const Login: React.FC = () => {
 
     return (
         <IonPage >
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{LoginStrings.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <div className='landing-icon-container'>
-                            <IonImg className='landing-icon' src={LoginStrings.icon} />
-                        </div>
-                        <IonButtons className='toolbar-button' slot="start">
-                            <IonBackButton color={'secondary'} defaultHref="/" />
-                        </IonButtons>
-                    </IonToolbar>
-                </IonHeader>
-
-
+                <Header />
                 <div className="login-container">
                     <div className="ion-margin-horizontal login-title-container">
                         <IonTitle size='large'>{LoginStrings.title}</IonTitle>

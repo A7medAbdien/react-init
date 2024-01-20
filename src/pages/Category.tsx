@@ -5,6 +5,7 @@ import { CategoryCardData } from '../data/data';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import BackButton from '../components/BackButton';
+import Header from '../components/Header';
 
 
 const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgColor, textColor }) => {
@@ -29,22 +30,8 @@ const Category: React.FC = () => {
 
     return (
         <IonPage >
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{CategoryStrings.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <div className='landing-icon-container'>
-                            <IonImg className='landing-icon' src={CategoryStrings.icon} />
-                        </div>
-                        <BackButton color='tertiary' />
-                    </IonToolbar>
-                </IonHeader>
-
-
+                <Header color='tertiary' />
                 <div className="category-container">
                     <div className="ion-margin-horizontal">
                         <h2>{CategoryStrings.header}</h2>

@@ -14,20 +14,8 @@ interface TabProps {
 const Tab: React.FC<TabProps> = ({ name, path, cardList }) => {
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{name}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <div className='landing-icon-container'>
-                            <IonImg className='landing-icon' src={LoginStrings.icon} />
-                        </div>
-                        <BackButton color='tertiary' />
-                    </IonToolbar>
-                </IonHeader>
+                <Header color='tertiary' />
                 <CardContainer parent={path} cardList={cardList} />
             </IonContent>
         </IonPage>

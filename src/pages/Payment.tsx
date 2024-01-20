@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { PaymentStrings } from '../data/Strings';
 import { chevronBackOutline } from 'ionicons/icons';
 import BackButton from '../components/BackButton';
+import Header from '../components/Header';
 
 const Payment: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
@@ -12,22 +13,8 @@ const Payment: React.FC = () => {
 
     return (
         <IonPage >
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{PaymentStrings.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <div className='landing-icon-container'>
-                            <IonImg className='landing-icon' src={PaymentStrings.icon} />
-                        </div>
-                        <BackButton />
-                    </IonToolbar>
-                </IonHeader>
-
-
+                <Header />
                 <div className="payment-container">
                     <div className="ion-margin-horizontal">
                         <h2 className='payment-input-label'>

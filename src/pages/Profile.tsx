@@ -1,4 +1,4 @@
-import { IonAvatar, IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonList, IonModal, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAvatar, IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonList, IonModal, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { Link, Redirect, useHistory } from 'react-router-dom';
@@ -50,22 +50,18 @@ const Profile: React.FC = () => {
     if (!loggedIn) {
         return <Redirect to={Links.base} />
     }
+    const isAndroid = isPlatform('android');
 
     return (
         <IonModal isOpen={profileOpen} >
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{ProfileStrings.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent >
-                <IonHeader collapse="condense">
+                <IonHeader collapse={!isAndroid ? "condense" : undefined}>
                     <IonToolbar>
                         <div className='landing-icon-container'>
                             <IonImg className='landing-icon' src={ProfileStrings.icon} />
                         </div>
                         <IonButtons className='toolbar-button' onClick={() => setProfileOpen(false)} slot="start">
-                            <IonButton>
+                            <IonButton color='secondary'>
                                 <IonIcon icon={close} size="large"></IonIcon>
                             </IonButton>
                         </IonButtons>

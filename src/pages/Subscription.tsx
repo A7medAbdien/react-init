@@ -3,6 +3,7 @@ import { Links, SubscriptionStrings } from '../data/Strings';
 import { SubscriptionCardData } from '../data/data';
 import { SubscriptionCardType } from '../types/Types';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 const SubscriptionCard: React.FC<SubscriptionCardType> = ({ id, price, duration, bgColor, textColor }) => {
     return <>
@@ -22,24 +23,8 @@ const SubscriptionCard: React.FC<SubscriptionCardType> = ({ id, price, duration,
 const Subscription: React.FC = () => {
     return (
         <IonPage >
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{SubscriptionStrings.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <div className='landing-icon-container'>
-                            <IonImg className='landing-icon' src={SubscriptionStrings.icon} />
-                        </div>
-                        <IonButtons className='toolbar-button' slot="start">
-                            <IonBackButton color={'secondary'} defaultHref="/" />
-                        </IonButtons>
-                    </IonToolbar>
-                </IonHeader>
-
-
+                <Header />
                 <div className="login-container">
                     <div className="ion-margin-horizontal">
                         <IonTitle size='large'>{SubscriptionStrings.title}</IonTitle>

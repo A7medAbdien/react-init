@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
 import { Links, RegisterStrings } from '../data/Strings';
+import Header from '../components/Header';
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -20,24 +21,8 @@ const Register: React.FC = () => {
 
     return (
         <IonPage >
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>{RegisterStrings.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
             <IonContent>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <div className='landing-icon-container'>
-                            <IonImg className='landing-icon' src={RegisterStrings.icon} />
-                        </div>
-                        <IonButtons className='toolbar-button' slot="start">
-                            <IonBackButton color={'secondary'} defaultHref="/" />
-                        </IonButtons>
-                    </IonToolbar>
-                </IonHeader>
-
-
+                <Header />
                 <div className="login-container">
                     <div className="ion-margin-horizontal login-title-container">
                         <IonTitle size='large'>{RegisterStrings.title}</IonTitle>
