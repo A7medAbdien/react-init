@@ -81,7 +81,7 @@
     font-size: 1.5rem;
     --background: var(--yellow);
     --color: var(--orange);
-    --placeholder-color: #ddd;
+    --placeholder-color: var(--orange);
     --placeholder-opacity: 0.8;
 }
 
@@ -151,7 +151,8 @@
 }
 
 .payment-input-label {
-    text-align: start;
+    color: var(--orange);
+    text-align: center;
     /* margin-left: 1rem; */
 }
 
@@ -162,9 +163,9 @@
     height: 3.5rem;
 
     font-size: 1.5rem;
-    --background: #373737;
-    --color: #fff;
-    --placeholder-color: #ddd;
+    --background: var(--beige);
+    --color: var(--orange);
+    --placeholder-color: var(--orange);
     --placeholder-opacity: 0.8;
 }
 

@@ -31,7 +31,7 @@ const Payment: React.FC = () => {
                         </h2>
                         <IonInput
                             className='payment-input'
-                            placeholder="username"
+                            placeholder={PaymentStrings.inputPlaceholder}
                             type="text"
                         />
                         <div className="payment-button-container">
@@ -40,7 +40,7 @@ const Payment: React.FC = () => {
                                 size="large"
                                 routerLink={PaymentStrings.link}
                             >
-                                {PaymentStrings.registerButton}
+                                {PaymentStrings.paymentButton}
                             </IonButton>
                         </div>
                     </div>

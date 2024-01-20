@@ -63,7 +63,8 @@ export const PaymentStrings = {
     title: 'Payment',
     icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     inputLabel: 'Location Link',
-    registerButton: 'Done',
+    inputPlaceholder: 'Enter Location Link',
+    paymentButton: 'Done',
     footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg',
     link: Links.category
 }
