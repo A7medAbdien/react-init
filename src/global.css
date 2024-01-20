@@ -193,7 +193,20 @@
 }
 
 /** src/components/CardContainer.css */
-.card {
+.tabs-card {
+    margin: 0;
+    border: 0.1rem solid var(--navy);
+}
+
+.tabs-card-header {
+    padding: 0.5rem;
+}
+
+.tabs-card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.5rem;
     margin: 0;
 }
 

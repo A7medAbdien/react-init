@@ -19,10 +19,18 @@ const CardContainer: React.FC<CardContainerProps> = ({ cardList, parent = 'vid' 
                     {cardList.map((card, index) => (
                         <IonCol key={index} size="6">
                             <Link to={`${parent}/${card.id}`} style={{ textDecoration: 'none' }}>
-                                <IonCard className="card fade-in">
-                                    <IonCardHeader>
-                                        <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
-                                        <IonCardTitle>{card.title}</IonCardTitle>
+                                <IonCard className="tabs-card fade-in">
+                                    <IonCardHeader
+                                        className='tabs-card-header'
+                                    >
+                                        <IonCardTitle
+                                            color={'primary'}
+                                            className='tabs-card-title'
+                                        >
+                                            {card.title}
+                                            {card.title}
+                                            {card.title}
+                                        </IonCardTitle>
                                     </IonCardHeader>
                                     <IonImg
                                         className='card-image-container'
