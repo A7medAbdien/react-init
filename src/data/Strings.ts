@@ -1,3 +1,17 @@
+import account from '../../public/imgs/account.svg'
+import angry from '../../public/imgs/angry.svg'
+import badge from '../../public/imgs/badge.svg'
+import bad from '../../public/imgs/bad.svg'
+// import bicycle-svg from '../../public/imgs/bicycle-svgrepo-com.svg.svg'
+// import account from '../../public/imgs/clothes.svg'
+// import account from '../../public/imgs/crying.svg'
+// import account from '../../public/imgs/'
+// import account from '../../public/imgs/account.svg'
+// import account from '../../public/imgs/account.svg'
+// import account from '../../public/imgs/account.svg'
+// const images = import.meta.glob("../../public/imgs/*")
+
+
 export const Colors = {
     navy: "#163440",
     sky: "#75BAB2",
@@ -17,6 +31,13 @@ export const Links = {
     tabs: '/tabs',
     contact: '/contact',
     about: '/about',
+}
+
+
+export const HeaderStrings = {
+    defaultProfileIcon: account,
+    // defaultProfileIcon: "https://ionicframework.com/docs/img/demos/avatar.svg",
+    appIcon: 'https://docs-demo.ionic.io/assets/madison.jpg'
 }
 
 export const LandingStrings = {

@@ -1,7 +1,7 @@
 import { IonAvatar, IonButton, IonButtons, IonHeader, IonImg, IonToolbar, isPlatform } from "@ionic/react";
 import { useGlobal } from "../context/GlobalContext";
 import BackButton from "./BackButton";
-import { Links, LoginStrings } from "../data/Strings";
+import { HeaderStrings, Links, LoginStrings } from "../data/Strings";
 import { useLocation } from "react-router";
 
 interface ContainerProps {
@@ -23,7 +23,7 @@ const Header: React.FC<ContainerProps> = ({ name, color = 'secondary' }) => {
         <IonHeader collapse={!isAndroid ? "condense" : undefined} >
             <IonToolbar >
                 <div className='landing-icon-container'>
-                    <IonImg className='landing-icon' src={LoginStrings.icon} />
+                    <IonImg className='landing-icon' src={HeaderStrings.appIcon} />
                 </div>
                 {!isBase && <BackButton color={color} />}
                 {isTabs && <IonButtons collapse={true} slot="end" className="profile-icon">
@@ -32,7 +32,7 @@ const Header: React.FC<ContainerProps> = ({ name, color = 'secondary' }) => {
                             <img
                                 // style={{ width: "50px", height: "50px" }}
                                 alt="Silhouette of a person's head"
-                                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                                src={HeaderStrings.defaultProfileIcon}
                             />
                         </IonAvatar>
                     </IonButton>
