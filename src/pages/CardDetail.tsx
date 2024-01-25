@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar, IonImg, IonItem, IonLabel, IonIcon } from '@ionic/react';
+import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonButton, IonAvatar, IonImg, IonItem, IonLabel, IonIcon, IonFab } from '@ionic/react';
 import { useLocation, useParams } from 'react-router-dom';
 import { TabsData } from '../data/data';
 import { useGlobal } from '../context/GlobalContext';
@@ -105,12 +105,10 @@ export const ItemCardDetail: React.FC<ItemCardDetailProps> = ({ card }) => {
                 </IonItem>
                 <h4>{CardDetailsStrings.descriptionTitle}</h4>
                 <p className='fade-in'>{card?.description}</p>
-                <IonItem lines='none'>
-                    <IonButtons slot='end'>
-                        <IonButton color='primary' className='item' size='large' fill='solid'><h4 className='item-details-button'>{CardDetailsStrings.buyButton}</h4></IonButton>
-                    </IonButtons>
-                </IonItem>
             </div>
+            <IonFab slot="fixed" vertical="bottom" horizontal="end">
+                <IonButton color='primary' className='item' size='small' fill='solid'><h4 className='item-details-button'>{CardDetailsStrings.buyButton}</h4></IonButton>
+            </IonFab>
         </div >
     </>
 }
