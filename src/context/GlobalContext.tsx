@@ -27,7 +27,6 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const [secondaryColoredBg, setSecondaryColoredBg] = useState(false);
 
     const { pathname } = useLocation();
-    console.log(pathname.split('/'));
 
     useEffect(() => {
         const rootElement = document.documentElement;
