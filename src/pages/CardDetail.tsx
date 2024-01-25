@@ -35,9 +35,9 @@ const CardDetail: React.FC<CardDetailProps> = ({ type }) => {
 
     return (
         <IonPage>
-            <Header color='secondary' />
+            <Header color={'tertiary'} />
 
-            <IonContent className="ion-text-center" color={'tertiary'}>
+            <IonContent className="ion-text-center" >
                 {cardTypes[type]}
             </IonContent>
         </IonPage>
@@ -89,17 +89,17 @@ export const ItemCardDetail: React.FC<ItemCardDetailProps> = ({ card }) => {
                     ></IonImg>
                 </div>
             </div>
-            <div className="detail-content-container">
+            <div className="detail-content-container item">
                 <h1>{card.title}</h1>
                 <IonItem className='price-container' lines='none'>
                     <h1>{card.price}</h1>
                     <IonButtons slot='end'>
-                        <IonButton fill='solid'>
-                            <IonIcon src={remove} />
+                        <IonButton color={'primary'} fill='solid'>
+                            <IonIcon className='item-details-icon' src={remove} />
                         </IonButton>
                         <h4 className='card-quantity'>{card.quantity}</h4>
-                        <IonButton fill='solid'>
-                            <IonIcon src={add} />
+                        <IonButton color={'primary'} fill='solid'>
+                            <IonIcon className='item-details-icon' src={add} />
                         </IonButton>
                     </IonButtons>
                 </IonItem>
@@ -107,7 +107,7 @@ export const ItemCardDetail: React.FC<ItemCardDetailProps> = ({ card }) => {
                 <p className='fade-in'>{card?.description}</p>
                 <IonItem lines='none'>
                     <IonButtons slot='end'>
-                        <IonButton size='large' fill='solid'><h4>{CardDetailsStrings.buyButton}</h4></IonButton>
+                        <IonButton color='primary' className='item' size='large' fill='solid'><h4 className='item-details-button'>{CardDetailsStrings.buyButton}</h4></IonButton>
                     </IonButtons>
                 </IonItem>
             </div>

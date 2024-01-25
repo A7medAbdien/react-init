@@ -321,6 +321,20 @@ ion-tab-button {
     animation: LoginAnimation 0.5s ease-in;
 }
 
+.item {
+    background: var(--navy);
+    color: var(--beige);
+}
+
+.item-details-icon {
+    color: var(--beige);
+}
+
+.item-details-button {
+    color: var(--beige);
+}
+
+
 .detail-container {
     width: 100%;
     height: 100%;
@@ -338,7 +352,7 @@ ion-tab-button {
 }
 
 .detail-content-container ion-item {
-    --background: transparent;
+    --background: var(--navy);
     --inner-padding-end: 0;
     --padding-start: 0;
     padding: 0;

@@ -27,10 +27,11 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const [secondaryColoredBg, setSecondaryColoredBg] = useState(false);
 
     const { pathname } = useLocation();
+    console.log(pathname.split('/'));
 
     useEffect(() => {
         const rootElement = document.documentElement;
-        if ((pathname.includes('category') || pathname.includes('tabs')) && !profileOpen && pathname.split('/').length < 4) {
+        if ((pathname.includes('category') || pathname.includes('tabs')) && !profileOpen && (pathname.includes('tab') || pathname.split('/').length < 4)) {
             setSecondaryColoredBg(true);
             rootElement.style.setProperty('--ion-background-color', Colors.beige);
         } else {
