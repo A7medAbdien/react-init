@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
                         )}
                     </div>
                 </div>
-                <IonImg className='landing-footer-image' src={LandingStrings.footerImage} />
+                <IonImg className='footer-image' src={LandingStrings.footerImage} />
             </IonContent>
         </IonPage >
     );

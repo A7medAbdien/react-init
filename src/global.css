@@ -51,10 +51,11 @@ ion-tab-bar {
     height: auto;
 }
 
-.landing-footer-image {
+.footer-image {
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 100%;
 }
 
 /** Login */

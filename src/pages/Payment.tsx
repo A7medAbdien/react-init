@@ -36,7 +36,7 @@ const Payment: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <IonImg className='landing-footer-image' src={PaymentStrings.footerImage} />
+                <IonImg className='footer-image' src={PaymentStrings.footerImage} />
             </IonContent>
         </IonPage >
     )

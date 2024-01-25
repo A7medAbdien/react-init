@@ -8,6 +8,7 @@ interface GlobalContextProps {
     loggedIn: boolean;
     registered: boolean;
     profileOpen: boolean;
+    secondaryColoredBg: boolean;
     setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
     setRegistered: React.Dispatch<React.SetStateAction<boolean>>;
     setProfileOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,24 +24,27 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [registered, setRegistered] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
+    const [secondaryColoredBg, setSecondaryColoredBg] = useState(false);
 
     const { pathname } = useLocation();
 
     useEffect(() => {
         const rootElement = document.documentElement;
         if ((pathname.includes('category') || pathname.includes('tabs')) && !profileOpen && pathname.split('/').length < 4) {
+            setSecondaryColoredBg(true);
             rootElement.style.setProperty('--ion-background-color', Colors.beige);
         } else {
+            setSecondaryColoredBg(false)
             rootElement.style.setProperty('--ion-background-color', Colors.navy);
         }
-    }, [pathname, profileOpen]);
+    }, [pathname, profileOpen, secondaryColoredBg]);
 
     useEffect(() => {
         setProfileOpen(false)
     }, [pathname])
 
     return (
-        <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen }}>
+        <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen, secondaryColoredBg }}>
             {children}
         </GlobalContext.Provider>
     );

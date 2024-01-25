@@ -21,7 +21,7 @@ const Landing: React.FC = () => {
                         </IonButton>
                     </div>
                 </div>
-                <IonImg className='landing-footer-image' src={LandingStrings.footerImage} />
+                <IonImg className='footer-image' src={LandingStrings.footerImage} />
             </IonContent>
         </IonPage >
     );

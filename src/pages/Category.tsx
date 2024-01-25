@@ -40,7 +40,7 @@ const Category: React.FC = () => {
                         )}
                     </div>
                 </div>
-                <IonImg className='category-footer-image' src={CategoryStrings.footerImage} />
+                <IonImg className='footer-image' src={CategoryStrings.footerImage} />
             </IonContent>
         </IonPage >
     );

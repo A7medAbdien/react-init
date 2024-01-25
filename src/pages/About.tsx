@@ -19,7 +19,7 @@ const About: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <IonImg className='landing-footer-image' src={PaymentStrings.footerImage} />
+                <IonImg className='footer-image' src={AboutStrings.footerImage} />
             </IonContent>
         </IonPage >
     )

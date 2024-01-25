@@ -1,4 +1,8 @@
 import account from '../../public/imgs/account.svg'
+import logo from '../../public/imgs/logo-pri.svg'
+import logoSec from '../../public/imgs/logo-sec.svg'
+import bg from '../../public/imgs/bg-pri.svg'
+import bgSec from '../../public/imgs/bg-sc.svg'
 import angry from '../../public/imgs/angry.svg'
 import badge from '../../public/imgs/badge.svg'
 import bad from '../../public/imgs/bad.svg'
@@ -35,21 +39,20 @@ export const Links = {
 
 export const HeaderStrings = {
     defaultProfileIcon: account,
+    icon: logo,
+    iconSec: logoSec,
     // defaultProfileIcon: "https://ionicframework.com/docs/img/demos/avatar.svg",
-    appIcon: 'https://docs-demo.ionic.io/assets/madison.jpg'
 }
 
 export const LandingStrings = {
     title: 'Welcome',
-    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     loginButton: 'Login',
     registerButton: 'Register',
-    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
+    footerImage: bg,
 }
 
 export const LoginStrings = {
     title: 'Login',
-    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     loginButton: 'Login',
@@ -62,7 +65,6 @@ export const LoginStrings = {
 
 export const RegisterStrings = {
     title: 'Register',
-    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     confirmPasswordLabel: 'Confirm Password',
@@ -81,25 +83,23 @@ export const SubscriptionStrings = {
 
 export const PaymentStrings = {
     title: 'Payment',
-    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     inputLabel: 'Location Link',
     inputPlaceholder: 'Enter Location Link',
     paymentButton: 'Done',
-    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    footerImage: bg,
     link: Links.category
 }
 
 export const CategoryStrings = {
     bgColor: Colors.beige,
     title: 'Category',
-    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     header: "What are you using the app for?",
-    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
+    footerImage: bgSec,
 }
 
 export const ProfileStrings = {
     title: 'Profile',
-    icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
+    icon: logo,
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     saveButton: 'Save',
@@ -114,10 +114,11 @@ export const ContactStrings = {
     icon: 'https://docs-demo.ionic.io/assets/madison.jpg',
     loginButton: 'Login',
     registerButton: 'Register',
-    footerImage: 'https://docs-demo.ionic.io/assets/madison.jpg'
+    footerImage: bg,
 }
 
 export const AboutStrings = {
     title: 'About Menkom',
-    content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quae non eius dicta consectetur! Animi, itaque ea. Laudantium iste eos, unde nihil excepturi sapiente repudiandae, mollitia consectetur modi eligendi ex.`
+    content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quae non eius dicta consectetur! Animi, itaque ea. Laudantium iste eos, unde nihil excepturi sapiente repudiandae, mollitia consectetur modi eligendi ex.`,
+    footerImage: bg,
 }

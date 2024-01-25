@@ -10,20 +10,22 @@ interface ContainerProps {
     color?: "primary" | "secondary" | "tertiary" | "success" | "warning" | "danger" | "light" | "medium" | "dark"
 }
 
-const Header: React.FC<ContainerProps> = ({ name, color = 'secondary' }) => {
+const Header: React.FC<ContainerProps> = ({ color = 'secondary' }) => {
     const isAndroid = isPlatform('android');
 
     const { pathname } = useLocation();
     const isBase = pathname === Links.base;
     const isTabs = pathname.includes(Links.tabs);
 
-    const { setProfileOpen } = useGlobal()
+    const { setProfileOpen, secondaryColoredBg } = useGlobal()
+    console.log(secondaryColoredBg);
+
 
     return <>
         <IonHeader collapse={!isAndroid ? "condense" : undefined} >
             <IonToolbar >
                 <div className='landing-icon-container'>
-                    <IonImg className='landing-icon' src={HeaderStrings.appIcon} />
+                    <IonImg className='landing-icon' src={secondaryColoredBg ? HeaderStrings.iconSec : HeaderStrings.icon} />
                 </div>
                 {!isBase && <BackButton color={color} />}
                 {isTabs && <IonButtons collapse={true} slot="end" className="profile-icon">
