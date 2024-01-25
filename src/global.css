@@ -20,9 +20,9 @@ ion-tab-bar {
 
 ion-tab-button {
     --background: var(--beige);
-    --background-focused: var(--navy);
-    --color: var(--orange);
-    --color-selected: var(--navy);
+    --background-focused: var(--orange);
+    --color: var(--navy);
+    --color-selected: var(--orange);
 }
 
 /** Profile  */
