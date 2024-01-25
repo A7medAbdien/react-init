@@ -1,4 +1,4 @@
-import { CategoryCardType, ContactType, IconCardType, ProfileLinkType } from './../types/Types';
+import { CategoryCardType, ContactType, IconCardType, ItemCardType, ProfileLinkType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
     alertCircleOutline,
@@ -144,34 +144,84 @@ export const IconCardList: IconCardType[] = [
     },
 ]
 
+export const ItemCardList: ItemCardType[] = [
+    {
+        id: '1',
+        title: 'Card 1',
+        price: '50BD',
+        quantity: 50,
+        image: _._image,
+        bgColor: Colors.navy,
+        textColor: Colors.beige,
+        description: _._content,
+    },
+    {
+        id: '1',
+        title: 'Card 1',
+        price: '50BD',
+        quantity: 50,
+        image: _._image,
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
+        description: _._content,
+    },
+    {
+        id: '1',
+        title: 'Card 1',
+        price: '50BD',
+        quantity: 50,
+        image: _._image,
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
+        description: _._content,
+    },
+    {
+        id: '1',
+        title: 'Card 1',
+        price: '50BD',
+        quantity: 50,
+        image: _._image,
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
+        description: _._content,
+    },
+]
+
 export const TabsData = [
     {
         name: 'Tab 1',
         path: '/tab1',
         icon: ellipse,
-        icons: false,
+        type: 'card',
         cardList: CardList,
     },
     {
         name: 'Tab 2',
         path: '/tab2',
         icon: square,
-        icons: false,
+        type: 'card',
         cardList: CardList,
     },
     {
         name: 'Tab 3',
         path: '/tab3',
         icon: triangle,
-        icons: true,
+        type: 'icon',
         cardList: IconCardList,
     },
     {
         name: 'Tab 4',
         path: '/tab4',
         icon: triangle,
-        icons: true,
+        type: 'icon',
         cardList: IconCardList,
+    },
+    {
+        name: 'Tab 5',
+        path: '/tab5',
+        icon: ellipse,
+        type: 'item',
+        cardList: ItemCardList,
     },
 ]
 

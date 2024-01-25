@@ -17,6 +17,17 @@ export interface IconCardType {
     textColor: string;
 };
 
+export interface ItemCardType {
+    id: string;
+    image: string;
+    price: string;
+    title: string;
+    description: string;
+    quantity: number;
+    bgColor: string;
+    textColor: string;
+};
+
 export interface SubscriptionCardType {
     id: number;
     price: number;

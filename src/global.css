@@ -212,7 +212,7 @@ ion-tab-button {
     left: 0;
 }
 
-/** LogoCard  */
+/** IconCard  */
 
 .tabs-icon-card {
     display: flex;
@@ -239,6 +239,29 @@ ion-tab-button {
     color: var(--beige);
     width: 80%;
     height: 5rem;
+}
+
+/** ItemCard  */
+.item-card-header {
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.item-card {
+    margin: 0;
+    border: 0.1rem solid var(--navy);
+}
+
+.item-card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.item-card-image-container {
+    /* height: 5rem; */
 }
 
 /** CardContainer */
