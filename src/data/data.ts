@@ -1,4 +1,4 @@
-import { CategoryCardType, ContactType, ProfileLinkType } from './../types/Types';
+import { CategoryCardType, ContactType, IconCardType, ProfileLinkType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
     alertCircleOutline,
@@ -9,84 +9,167 @@ import {
     triangle
 } from 'ionicons/icons';
 import { Colors, Links, ContactStrings } from './Strings';
+import account from '../../public/imgs/account.svg';
 
-export const Tab1CardList: CardType[] = [
+const content = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`
+const image = "https://docs-demo.ionic.io/assets/madison.jpg"
+const video = "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_video_shorts_bpesvs.mp4"
+const video2 = "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4"
+
+export const CardList: CardType[] = [
     {
         id: '1',
         title: 'Card 1',
         subtitle: 'Subtitle 1',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://docs-demo.ionic.io/assets/madison.jpg",
-        video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_video_shorts_bpesvs.mp4"
+        content: content,
+        image: image,
+        video: video,
     },
     {
         id: '2',
         title: 'Card 2',
         subtitle: 'Subtitle 2',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://docs-demo.ionic.io/assets/madison.jpg",
-        video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4"
+        content: content,
+        image: image,
+        video: video2,
     },
     {
         id: '3',
         title: 'Card 3',
         subtitle: 'Subtitle 3',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://docs-demo.ionic.io/assets/madison.jpg",
-        video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_video_shorts_bpesvs.mp4"
+        content: content,
+        image: image,
+        video: video,
     },
     {
         id: '4',
         title: 'Card 1',
         subtitle: 'Subtitle 1',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://docs-demo.ionic.io/assets/madison.jpg",
-        video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_video_shorts_bpesvs.mp4"
+        content: content,
+        image: image,
+        video: video,
     },
     {
         id: '5',
         title: 'Card 2',
         subtitle: 'Subtitle 2',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://docs-demo.ionic.io/assets/madison.jpg",
-        video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_video_shorts_bpesvs.mp4"
+        content: content,
+        image: image,
+        video: video,
     },
     {
         id: '6',
         title: 'Card 3',
         subtitle: 'Subtitle 3',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
-        image: "https://docs-demo.ionic.io/assets/madison.jpg",
-        video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_video_shorts_bpesvs.mp4"
+        content: content,
+        image: image,
+        video: video,
     },
 ];
-export const Tab2CardList = Tab1CardList
-export const Tab3CardList = Tab1CardList
+
+export const IconCardList: IconCardType[] = [
+    {
+        id: '1',
+        title: 'Card 1',
+        icon: account,
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
+        content: content,
+        video: video,
+    },
+    {
+        id: '2',
+        title: 'Card 2',
+        icon: account,
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
+        content: content,
+        video: video,
+    },
+    {
+        id: '3',
+        title: 'Card 3',
+        icon: account,
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
+        content: content,
+        video: video,
+    },
+    {
+        id: '4',
+        title: 'Card 4',
+        icon: account,
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
+        content: content,
+        video: video,
+    },
+    {
+        id: '5',
+        title: 'Card 5',
+        icon: account,
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
+        content: content,
+        video: video,
+    },
+    {
+        id: '6',
+        title: 'Card 6',
+        icon: account,
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
+        content: content,
+        video: video,
+    },
+    {
+        id: '7',
+        title: 'Card 7',
+        icon: account,
+        bgColor: Colors.navy,
+        textColor: Colors.beige,
+        content: content,
+        video: video,
+    },
+    {
+        id: '8',
+        title: 'Card 8',
+        icon: account,
+        bgColor: Colors.navy,
+        textColor: Colors.beige,
+        content: content,
+        video: video,
+    },
+]
 
 export const TabsData = [
     {
         name: 'Tab 1',
         path: '/tab1',
         icon: ellipse,
-        cardList: Tab1CardList,
+        icons: false,
+        cardList: CardList,
     },
     {
         name: 'Tab 2',
         path: '/tab2',
         icon: square,
-        cardList: Tab2CardList,
+        icons: false,
+        cardList: CardList,
     },
     {
         name: 'Tab 3',
         path: '/tab3',
         icon: triangle,
-        cardList: Tab3CardList,
+        icons: true,
+        cardList: IconCardList,
     },
     {
         name: 'Tab 4',
         path: '/tab4',
         icon: triangle,
-        cardList: Tab3CardList,
+        icons: true,
+        cardList: IconCardList,
     },
 ]
 

@@ -18,6 +18,13 @@ ion-tab-bar {
     --border: 0.2rem solid var(--navy);
 }
 
+ion-tab-button {
+    --background: var(--beige);
+    --background-focused: var(--navy);
+    --color: var(--orange);
+    --color-selected: var(--navy);
+}
+
 /** Profile  */
 
 .profile-icon {
@@ -205,7 +212,36 @@ ion-tab-bar {
     left: 0;
 }
 
-/** src/components/CardContainer.css */
+/** LogoCard  */
+
+.tabs-icon-card {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 1rem;
+    background: var(--navy);
+}
+
+.tabs-icon-card-title {
+    color: var(--beige);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.icon-card-image-container {
+    color: var(--beige);
+    width: 80%;
+    height: 5rem;
+}
+
+/** CardContainer */
 .tabs-card {
     margin: 0;
     border: 0.1rem solid var(--navy);

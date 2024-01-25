@@ -7,6 +7,16 @@ export interface CardType {
     content: string
 };
 
+export interface IconCardType {
+    id: string;
+    icon: string;
+    video: string;
+    title: string;
+    content: string;
+    bgColor: string;
+    textColor: string;
+};
+
 export interface SubscriptionCardType {
     id: number;
     price: number;

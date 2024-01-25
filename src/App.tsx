@@ -66,7 +66,7 @@ const Taps: React.FC = () => {
                 </Route>
                 {TabsData.map((tab) => (
                     <Route exact path={baseUrl + tab.path} key={tab.name}>
-                        <Tab name={tab.name} path={baseUrl + tab.path} cardList={tab.cardList} />
+                        <Tab icons={tab.icons} path={baseUrl + tab.path} cardList={tab.cardList} />
                     </Route>
                 ))}
                 {tabsPaths.map((path, i) =>

@@ -18,7 +18,6 @@ const Header: React.FC<ContainerProps> = ({ color = 'secondary' }) => {
     const isTabs = pathname.includes(Links.tabs);
 
     const { setProfileOpen, secondaryColoredBg } = useGlobal()
-    console.log(secondaryColoredBg);
 
 
     return <>
