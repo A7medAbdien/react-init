@@ -337,6 +337,26 @@ ion-tab-button {
     overflow: hidden;
 }
 
+.detail-content-container ion-item {
+    --background: transparent;
+    --inner-padding-end: 0;
+    --padding-start: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.detail-content-container h1,
+.detail-content-container h4 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.detail-content-container .card-quantity {
+    display: flex;
+    justify-content: center;
+    width: 3rem;
+}
+
 /** Profile  */
 
 .profile-img-container {

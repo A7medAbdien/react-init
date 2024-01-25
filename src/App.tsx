@@ -55,7 +55,6 @@ const Taps: React.FC = () => {
         return <Redirect to={Links.base} />
     }
     const baseUrl = Links.tabs
-    const tabsPaths = [...TabsData.map((t) => `${baseUrl}${t.path}/:cardId`)];
 
     return <>
         <IonTabs>
@@ -69,9 +68,9 @@ const Taps: React.FC = () => {
                         <Tab type={tab.type} path={baseUrl + tab.path} cardList={tab.cardList} />
                     </Route>
                 ))}
-                {tabsPaths.map((path, i) =>
-                    <Route key={i} exact path={path} >
-                        <CardDetail />
+                {TabsData.map((t, i) =>
+                    <Route key={i} exact path={`${baseUrl}${t.path}/:cardId`} >
+                        <CardDetail type={t.type} />
                     </Route>
                 )}
 

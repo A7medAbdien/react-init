@@ -122,3 +122,8 @@ export const AboutStrings = {
     content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quae non eius dicta consectetur! Animi, itaque ea. Laudantium iste eos, unde nihil excepturi sapiente repudiandae, mollitia consectetur modi eligendi ex.`,
     footerImage: bg,
 }
+
+export const CardDetailsStrings = {
+    buyButton: 'Buy Now',
+    descriptionTitle: "Description"
+}

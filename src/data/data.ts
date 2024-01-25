@@ -14,8 +14,7 @@ import account from '../../public/imgs/account.svg';
 const _ = {
     _content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
     _image: "https://docs-demo.ionic.io/assets/madison.jpg",
-    _video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723512/react-base-vid/Beauty_of_sea_beach_nature_WhatsApp_status_relaxing_._video_shorts_bpesvs.mp4",
-    _video2: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4",
+    _video: "https://res.cloudinary.com/dcmthd8bn/video/upload/v1694723012/react-base-vid/Blue_Sky_and_Clouds_Timelapse_0892__Videvo_preview_kx6yal.mp4",
 }
 
 export const CardList: CardType[] = [
@@ -33,7 +32,7 @@ export const CardList: CardType[] = [
         subtitle: 'Subtitle 2',
         content: _._content,
         image: _._image,
-        video: _._video2,
+        video: _._video,
     },
     {
         id: '3',
@@ -224,6 +223,8 @@ export const TabsData = [
         cardList: ItemCardList,
     },
 ]
+
+export const itemTabsPath = TabsData.filter((t) => t.type === 'item').map(tab => tab.path);
 
 export const SubscriptionCardData: SubscriptionCardType[] = [
     {
