@@ -47,8 +47,8 @@ export const HeaderStrings = {
 
 export const LandingStrings = {
     title: 'Welcome',
-    loginButton: 'Login',
-    registerButton: 'Register',
+    loginButton: 'Sign In',
+    registerButton: 'Sign Up',
     footerImage: bg,
 }
 
