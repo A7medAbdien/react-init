@@ -50,7 +50,7 @@ const Taps: React.FC = () => {
 
     const { loggedIn } = useGlobal();
     if (!loggedIn) {
-        return <Redirect to={Links.base} />
+        // return <Redirect to={Links.base} />
     }
     const baseUrl = Links.tabs
 

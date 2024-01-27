@@ -48,7 +48,7 @@ const Profile: React.FC = () => {
 
     const { profileOpen, setProfileOpen, loggedIn } = useGlobal();
     if (!loggedIn) {
-        return <Redirect to={Links.base} />
+        // return <Redirect to={Links.base} />
     }
     const isAndroid = isPlatform('android');
 
