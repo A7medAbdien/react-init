@@ -41,8 +41,7 @@ export const Links = {
 export const HeaderStrings = {
     defaultProfileIcon: account,
     icon: logo,
-    iconSec: logoSec,
-    // defaultProfileIcon: "https://ionicframework.com/docs/img/demos/avatar.svg",
+    iconSec: logoSec
 }
 
 export const LandingStrings = {
@@ -53,10 +52,10 @@ export const LandingStrings = {
 }
 
 export const LoginStrings = {
-    title: 'Login',
+    title: 'Sign in',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
-    loginButton: 'Login',
+    loginButton: 'Sign in',
     registerButton: 'Register',
     username: 'asd@gmail.com',
     password: 'asdasd',
@@ -65,11 +64,11 @@ export const LoginStrings = {
 }
 
 export const RegisterStrings = {
-    title: 'Register',
+    title: 'Sing Up',
     usernameLabel: 'Username',
     passwordLabel: 'Password',
     confirmPasswordLabel: 'Confirm Password',
-    registerButton: 'Register',
+    registerButton: 'Sing Up',
 }
 
 export const SubscriptionStrings = {
