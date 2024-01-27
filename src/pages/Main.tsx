@@ -19,14 +19,14 @@ const CategoryCard: React.FC<CategoryCardType> = ({
         <>
             <Link
                 to={path}
-                className="main-card-container ion-padding"
+                className="main-card-container"
                 style={{
                     textDecoration: "none",
                     background: bgColor,
                     color: textColor,
                 }}
             >
-                <IonCol>
+                <IonCol size="7">
                     <h1>{title}</h1>
                 </IonCol>
                 <IonCol size="4">

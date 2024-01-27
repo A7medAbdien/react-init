@@ -312,7 +312,7 @@ export const MainCardData: CategoryCardType[] = [
     },
     {
         id: 3,
-        title: 'Learning Difficulty',
+        title: 'Directions to Guardian',
         icon: parentsImage,
         bgColor: Colors.sky,
         textColor: Colors.orange,
@@ -320,7 +320,7 @@ export const MainCardData: CategoryCardType[] = [
     },
     {
         id: 4,
-        title: 'Learning Difficulty',
+        title: 'Educational Games',
         icon: gamesImage,
         bgColor: Colors.navy,
         textColor: Colors.sky,
