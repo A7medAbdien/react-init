@@ -1,17 +1,15 @@
-import { IonBackButton, IonButton, IonButtons, IonCard, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
-import { Links, CategoryStrings } from '../data/Strings';
+import { IonCard, IonContent, IonImg, IonItem, IonPage, IonThumbnail } from '@ionic/react';
+import { CategoryStrings } from '../data/Strings';
 import { CategoryCardType } from '../types/Types';
 import { CategoryCardData } from '../data/data';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import BackButton from '../components/BackButton';
 import Header from '../components/Header';
 
 
 const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgColor, textColor }) => {
     return <>
         <Link style={{ textDecoration: 'none' }} to={path}>
-            <IonCard routerLink={Links.login}>
+            <IonCard>
                 <IonItem
                     style={{ '--background': bgColor, 'color': textColor }}
                     lines={'none'}
