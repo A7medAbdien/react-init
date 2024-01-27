@@ -45,6 +45,7 @@ import Category from './pages/Category';
 import { useEffect } from 'react';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Main from './pages/Main';
 
 setupIonicReact();
 
@@ -109,6 +110,9 @@ const App: React.FC = () => {
                     </Route>
                     <Route exact path={Links.category}>
                         <Category />
+                    </Route>
+                    <Route exact path={Links.main}>
+                        <Main />
                     </Route>
                     <Route path={Links.tabs}>
                         <Taps />

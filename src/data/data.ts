@@ -264,7 +264,7 @@ export const CategoryCardData: CategoryCardType[] = [
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
         bgColor: Colors.sky,
         textColor: Colors.navy,
-        path: Links.tabs
+        path: Links.main
     },
     {
         id: 2,
@@ -272,7 +272,7 @@ export const CategoryCardData: CategoryCardType[] = [
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
         bgColor: Colors.navy,
         textColor: Colors.orange,
-        path: Links.tabs
+        path: Links.main
     },
     {
         id: 3,
@@ -280,7 +280,7 @@ export const CategoryCardData: CategoryCardType[] = [
         icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
         bgColor: Colors.orange,
         textColor: Colors.sky,
-        path: Links.tabs
+        path: Links.main
     }
 ]
 

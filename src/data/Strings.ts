@@ -32,6 +32,7 @@ export const Links = {
     subscription: '/subscription',
     payment: '/payment',
     category: '/category',
+    main: '/main',
     tabs: '/tabs',
     contact: '/contact',
     about: '/about',
@@ -59,7 +60,7 @@ export const LoginStrings = {
     registerButton: 'Register',
     username: 'asd@gmail.com',
     password: 'asdasd',
-    loginSuccessLink: Links.tabs,
+    loginSuccessLink: Links.main,
     loginFailLink: Links.register
 }
 
