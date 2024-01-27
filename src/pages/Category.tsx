@@ -1,4 +1,4 @@
-import { IonCard, IonContent, IonImg, IonItem, IonPage, IonThumbnail } from '@ionic/react';
+import { IonCard, IonContent, IonIcon, IonImg, IonItem, IonPage, IonThumbnail } from '@ionic/react';
 import { CategoryStrings } from '../data/Strings';
 import { CategoryCardType } from '../types/Types';
 import { CategoryCardData } from '../data/data';
@@ -15,7 +15,7 @@ const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgCol
                     lines={'none'}
                 >
                     <IonThumbnail slot="end">
-                        <img alt={title} src={icon} />
+                        <IonIcon style={{ height: '100%', width: '100%' }} src={icon} />
                     </IonThumbnail>
                     <h4>{title}</h4>
                 </IonItem>

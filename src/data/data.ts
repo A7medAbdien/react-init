@@ -270,7 +270,7 @@ export const CategoryCardData: CategoryCardType[] = [
     {
         id: 1,
         title: 'Down Syndrome',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        icon: downSyndromeImage,
         bgColor: Colors.sky,
         textColor: Colors.navy,
         path: Links.main
@@ -278,7 +278,7 @@ export const CategoryCardData: CategoryCardType[] = [
     {
         id: 2,
         title: 'Deaf-Mute',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        icon: deafMuteImage,
         bgColor: Colors.navy,
         textColor: Colors.orange,
         path: Links.main
@@ -286,25 +286,26 @@ export const CategoryCardData: CategoryCardType[] = [
     {
         id: 3,
         title: 'Learning Difficulty',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        icon: learningDifficultyImage,
         bgColor: Colors.orange,
         textColor: Colors.sky,
         path: Links.main
     }
 ]
+
 export const MainCardData: CategoryCardType[] = [
     {
         id: 1,
-        title: 'Down Syndrome',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        title: 'Pronunciation Exercises',
+        icon: pronunciationImage,
         bgColor: Colors.yellow,
         textColor: Colors.navy,
         path: Links.tabs
     },
     {
         id: 2,
-        title: 'Deaf-Mute',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        title: `Educational Videos`,
+        icon: videosImage,
         bgColor: Colors.orange,
         textColor: Colors.yellow,
         path: Links.tabs
@@ -312,7 +313,7 @@ export const MainCardData: CategoryCardType[] = [
     {
         id: 3,
         title: 'Learning Difficulty',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        icon: parentsImage,
         bgColor: Colors.sky,
         textColor: Colors.orange,
         path: Links.tabs
@@ -320,7 +321,7 @@ export const MainCardData: CategoryCardType[] = [
     {
         id: 4,
         title: 'Learning Difficulty',
-        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        icon: gamesImage,
         bgColor: Colors.navy,
         textColor: Colors.sky,
         path: Links.tabs
