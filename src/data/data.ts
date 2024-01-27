@@ -10,6 +10,9 @@ import {
 } from 'ionicons/icons';
 import { Colors, Links, ContactStrings } from './Strings';
 import account from '../../public/imgs/account.svg';
+import angry from '../../public/imgs/angry.svg'
+import badge from '../../public/imgs/badge.svg'
+import bad from '../../public/imgs/bad.svg'
 
 const _ = {
     _content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
@@ -71,8 +74,8 @@ export const CardList: CardType[] = [
 export const IconCardList: IconCardType[] = [
     {
         id: '1',
-        title: 'Card 1',
-        icon: account,
+        title: 'Angry Child',
+        icon: angry,
         bgColor: Colors.yellow,
         textColor: Colors.navy,
         content: _._content,
