@@ -10,9 +10,15 @@ import {
 } from 'ionicons/icons';
 import { Colors, Links, ContactStrings } from './Strings';
 import account from '../../public/imgs/account.svg';
-import angry from '../../public/imgs/angry.svg'
-import badge from '../../public/imgs/badge.svg'
-import bad from '../../public/imgs/bad.svg'
+import angry from '../../public/imgs/cardIcons/angry.svg'
+import dailyTaskImage from '../../public/imgs/categoryIcons/daily tasks.svg'
+import deafMuteImage from '../../public/imgs/categoryIcons/deaf-mute.svg'
+import downSyndromeImage from '../../public/imgs/categoryIcons/down syndrome.svg'
+import learningDifficultyImage from '../../public/imgs/categoryIcons/learning difficulty.svg'
+import parentsImage from '../../public/imgs/categoryIcons/parents.svg'
+import pronunciationImage from '../../public/imgs/categoryIcons/pronunciation.svg'
+import gamesImage from '../../public/imgs/categoryIcons/games icon.svg'
+import videosImage from '../../public/imgs/categoryIcons/videos.svg'
 
 const _ = {
     _content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
@@ -193,35 +199,35 @@ export const TabsData = [
     {
         name: 'Tab 1',
         path: '/tab1',
-        icon: ellipse,
+        icon: pronunciationImage,
         type: 'card',
         cardList: CardList,
     },
     {
         name: 'Tab 2',
         path: '/tab2',
-        icon: square,
+        icon: videosImage,
         type: 'card',
         cardList: CardList,
     },
     {
         name: 'Tab 3',
         path: '/tab3',
-        icon: triangle,
+        icon: parentsImage,
         type: 'icon',
         cardList: IconCardList,
     },
     {
         name: 'Tab 4',
         path: '/tab4',
-        icon: triangle,
+        icon: gamesImage,
         type: 'icon',
         cardList: IconCardList,
     },
     {
         name: 'Tab 5',
         path: '/tab5',
-        icon: ellipse,
+        icon: dailyTaskImage,
         type: 'item',
         cardList: ItemCardList,
     },
