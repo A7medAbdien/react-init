@@ -13,7 +13,7 @@ const CategoryCard: React.FC<CategoryCardType> = ({ id, title, path, icon, bgCol
         <Link style={{ textDecoration: 'none' }} to={path}>
             <IonCard routerLink={Links.login}>
                 <IonItem
-                    style={{ '--background': bgColor, '--color': textColor }}
+                    style={{ '--background': bgColor, 'color': textColor }}
                     lines={'none'}
                 >
                     <IonThumbnail slot="end">
