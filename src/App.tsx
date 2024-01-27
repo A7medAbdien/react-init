@@ -1,9 +1,7 @@
-import { Redirect, Route, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import {
     IonApp,
-    IonIcon,
-    IonLabel,
-    IonRouterOutlet,
+    IonIcon, IonRouterOutlet,
     IonTabBar,
     IonTabButton,
     IonTabs,
@@ -37,12 +35,11 @@ import CardDetail from './pages/CardDetail';
 import { TabsData } from './data/data';
 import Tab from './components/Tab';
 import Profile from './pages/Profile';
-import { CategoryStrings, Links } from './data/Strings';
+import { Links } from './data/Strings';
 import Landing from './pages/Landing';
 import Subscription from './pages/Subscription';
 import Payment from './pages/Payment';
 import Category from './pages/Category';
-import { useEffect } from 'react';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Main from './pages/Main';
