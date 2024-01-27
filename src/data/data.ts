@@ -283,6 +283,40 @@ export const CategoryCardData: CategoryCardType[] = [
         path: Links.main
     }
 ]
+export const MainCardData: CategoryCardType[] = [
+    {
+        id: 1,
+        title: 'Down Syndrome',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
+        path: Links.tabs
+    },
+    {
+        id: 2,
+        title: 'Deaf-Mute',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
+        path: Links.tabs
+    },
+    {
+        id: 3,
+        title: 'Learning Difficulty',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
+        path: Links.tabs
+    },
+    {
+        id: 4,
+        title: 'Learning Difficulty',
+        icon: "https://ionicframework.com/docs/img/demos/thumbnail.svg",
+        bgColor: Colors.navy,
+        textColor: Colors.sky,
+        path: Links.tabs
+    }
+]
 
 export const ProfileLinkData: ProfileLinkType[] = [
     {

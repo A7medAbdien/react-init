@@ -212,6 +212,25 @@ ion-tab-button {
     left: 0;
 }
 
+/** Main  */
+
+.main-cards-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-card-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card-container h1 {
+    font-weight: 600;
+}
+
 /** IconCard  */
 
 .tabs-icon-card {
