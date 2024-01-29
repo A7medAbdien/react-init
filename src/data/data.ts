@@ -10,7 +10,34 @@ import {
 } from 'ionicons/icons';
 import { Colors, Links, ContactStrings } from './Strings';
 import account from '../../public/imgs/account.svg';
-import angry from '../../public/imgs/cardIcons/angry.svg'
+
+import toothbrushImage from '../../public/imgs/cardIcons/toothbrush.svg'
+import angry from '../../public/imgs/cardIcons/facesIcons/angry.svg'
+import weakImage from '../../public/imgs/cardIcons/facesIcons/weak.svg'
+import tiredImage from '../../public/imgs/cardIcons/facesIcons/tired.svg'
+import tongueImage from '../../public/imgs/cardIcons/facesIcons/tongue.svg'
+import sleepyImage from '../../public/imgs/cardIcons/facesIcons/sleepy.svg'
+import silentImage from '../../public/imgs/cardIcons/facesIcons/silent.svg'
+import silenceImage from '../../public/imgs/cardIcons/facesIcons/silence.svg'
+import laughImage from '../../public/imgs/cardIcons/facesIcons/laugh.svg'
+import emoticonImage from '../../public/imgs/cardIcons/facesIcons/emoticon.svg'
+
+import soapImage from '../../public/imgs/cardIcons/soap.svg'
+import shoesImage from '../../public/imgs/cardIcons/shoes.svg'
+import reorderImage from '../../public/imgs/cardIcons/reorder.svg'
+import groomingImage from '../../public/imgs/cardIcons/grooming.svg'
+import eatingImage from '../../public/imgs/cardIcons/eating.svg'
+import clothesImage from '../../public/imgs/cardIcons/clothes.svg'
+import bedImage from '../../public/imgs/cardIcons/bed.svg'
+
+import playImage from '../../public/imgs/cardIcons/play.svg'
+import packingImage from '../../public/imgs/cardIcons/packing.svg'
+import mailImage from '../../public/imgs/cardIcons/mail.svg'
+import lockImage from '../../public/imgs/cardIcons/lock.svg'
+import cryingImage from '../../public/imgs/cardIcons/crying.svg'
+import bicycleImage from '../../public/imgs/cardIcons/bicycle-svgrepo-com.svg'
+import badgeImage from '../../public/imgs/cardIcons/badge.svg'
+
 import dailyTaskImage from '../../public/imgs/categoryIcons/daily tasks.svg'
 import deafMuteImage from '../../public/imgs/categoryIcons/deaf-mute.svg'
 import downSyndromeImage from '../../public/imgs/categoryIcons/down syndrome.svg'
@@ -77,7 +104,81 @@ export const CardList: CardType[] = [
     },
 ];
 
-export const IconCardList: IconCardType[] = [
+export const IconCardListTab1: IconCardType[] = [
+    {
+        id: '1',
+        title: 'Brushing Teeth',
+        icon: toothbrushImage,
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '2',
+        title: 'Combing Hair',
+        icon: groomingImage,
+        bgColor: Colors.yellow,
+        textColor: Colors.navy,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '3',
+        title: 'Making Bed ',
+        icon: bedImage,
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '4',
+        title: 'Eating',
+        icon: eatingImage,
+        bgColor: Colors.orange,
+        textColor: Colors.yellow,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '5',
+        title: 'Getting Dressed',
+        icon: clothesImage,
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '6',
+        title: 'Wearing Shoes',
+        icon: shoesImage,
+        bgColor: Colors.sky,
+        textColor: Colors.orange,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '7',
+        title: 'Facial Wash',
+        icon: soapImage,
+        bgColor: Colors.navy,
+        textColor: Colors.beige,
+        content: _._content,
+        video: _._video,
+    },
+    {
+        id: '8',
+        title: 'Arranging',
+        icon: reorderImage,
+        bgColor: Colors.navy,
+        textColor: Colors.beige,
+        content: _._content,
+        video: _._video,
+    },
+]
+export const IconCardListTab2: IconCardType[] = [
     {
         id: '1',
         title: 'Angry Child',
@@ -89,8 +190,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '2',
-        title: 'Card 2',
-        icon: account,
+        title: 'Stubborn Child',
+        icon: emoticonImage,
         bgColor: Colors.yellow,
         textColor: Colors.navy,
         content: _._content,
@@ -98,8 +199,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '3',
-        title: 'Card 3',
-        icon: account,
+        title: 'Naughty Child',
+        icon: tongueImage,
         bgColor: Colors.orange,
         textColor: Colors.yellow,
         content: _._content,
@@ -107,8 +208,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '4',
-        title: 'Card 4',
-        icon: account,
+        title: 'Weak Child',
+        icon: weakImage,
         bgColor: Colors.orange,
         textColor: Colors.yellow,
         content: _._content,
@@ -116,8 +217,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '5',
-        title: 'Card 5',
-        icon: account,
+        title: 'Isolated Child',
+        icon: silentImage,
         bgColor: Colors.sky,
         textColor: Colors.orange,
         content: _._content,
@@ -125,8 +226,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '6',
-        title: 'Card 6',
-        icon: account,
+        title: 'Messy Child',
+        icon: tiredImage,
         bgColor: Colors.sky,
         textColor: Colors.orange,
         content: _._content,
@@ -134,8 +235,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '7',
-        title: 'Card 7',
-        icon: account,
+        title: 'Hyperactive Child',
+        icon: laughImage,
         bgColor: Colors.navy,
         textColor: Colors.beige,
         content: _._content,
@@ -143,8 +244,8 @@ export const IconCardList: IconCardType[] = [
     },
     {
         id: '8',
-        title: 'Card 8',
-        icon: account,
+        title: 'Lethargic Child',
+        icon: sleepyImage,
         bgColor: Colors.navy,
         textColor: Colors.beige,
         content: _._content,
@@ -215,14 +316,14 @@ export const TabsData = [
         path: '/tab3',
         icon: parentsImage,
         type: 'icon',
-        cardList: IconCardList,
+        cardList: IconCardListTab1,
     },
     {
         name: 'Tab 4',
         path: '/tab4',
         icon: gamesImage,
         type: 'icon',
-        cardList: IconCardList,
+        cardList: IconCardListTab2,
     },
     {
         name: 'Tab 5',
