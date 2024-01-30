@@ -1,8 +1,8 @@
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonInput, IonPage, IonTitle } from '@ionic/react';
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
-import { Links, LoginStrings, RegisterStrings } from '../data/Strings';
+import { Links, RegisterStrings } from '../data/Strings';
 import Header from '../components/Header';
 import { setItem } from '../services/storage';
 
