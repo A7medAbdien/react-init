@@ -2,8 +2,9 @@ import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, Io
 import { useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
-import { Links, RegisterStrings } from '../data/Strings';
+import { Links, LoginStrings, RegisterStrings } from '../data/Strings';
 import Header from '../components/Header';
+import { setItem } from '../services/storage';
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -13,8 +14,8 @@ const Register: React.FC = () => {
     const history = useHistory();
 
     const handleRegister = () => {
-        // post username and password to server
-        setRegistered(true)
+        setItem('username', username)
+        setRegistered(true);
         setLoggedIn(true);
         history.replace(Links.subscription);
     };
