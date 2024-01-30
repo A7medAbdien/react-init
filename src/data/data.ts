@@ -1,24 +1,19 @@
 import { CategoryCardType, ContactType, IconCardType, ItemCardType, ProfileLinkType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
-    alertCircleOutline,
-    ellipse,
-    helpCircle,
-    helpCircleOutline,
-    square,
-    triangle
+    alertCircleOutline, helpCircle
 } from 'ionicons/icons';
-import { Colors, Links, ContactStrings } from './Strings';
+import { Colors, Links } from './Strings';
 import account from '../../public/imgs/account.svg';
-import angry from '../../public/imgs/cardIcons/angry.svg'
-import dailyTaskImage from '../../public/imgs/categoryIcons/daily tasks.svg'
-import deafMuteImage from '../../public/imgs/categoryIcons/deaf-mute.svg'
-import downSyndromeImage from '../../public/imgs/categoryIcons/down syndrome.svg'
-import learningDifficultyImage from '../../public/imgs/categoryIcons/learning difficulty.svg'
-import parentsImage from '../../public/imgs/categoryIcons/parents.svg'
-import pronunciationImage from '../../public/imgs/categoryIcons/pronunciation.svg'
-import gamesImage from '../../public/imgs/categoryIcons/games icon.svg'
-import videosImage from '../../public/imgs/categoryIcons/videos.svg'
+import angry from '../../public/imgs/cardIcons/angry.svg';
+import dailyTaskImage from '../../public/imgs/categoryIcons/daily tasks.svg';
+import deafMuteImage from '../../public/imgs/categoryIcons/deaf-mute.svg';
+import downSyndromeImage from '../../public/imgs/categoryIcons/down syndrome.svg';
+import learningDifficultyImage from '../../public/imgs/categoryIcons/learning difficulty.svg';
+import parentsImage from '../../public/imgs/categoryIcons/parents.svg';
+import pronunciationImage from '../../public/imgs/categoryIcons/pronunciation.svg';
+import gamesImage from '../../public/imgs/categoryIcons/games icon.svg';
+import videosImage from '../../public/imgs/categoryIcons/videos.svg';
 
 const _ = {
     _content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio numquam maxime sunt sit eaque error cumque sequi expedita accusamus veritatis eveniet, quo magnam, autem possimus deleniti id enim porro molestiae.`,
