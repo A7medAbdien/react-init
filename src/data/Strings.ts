@@ -85,6 +85,7 @@ export const PaymentStrings = {
     inputLabel: '2. Enter the code to access',
     inputPlaceholder: 'Enter code here',
     inputButton: 'Done',
+    toastMessage: 'Please, enter the right code',
     footerImage: bg,
     link: Links.category
 }

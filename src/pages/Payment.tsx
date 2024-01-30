@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     IonContent,
     IonPage,
@@ -6,8 +6,9 @@ import {
     IonImg,
     IonInput,
     IonIcon,
+    IonToast,
 } from "@ionic/react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { PaymentStrings, PaymentWhatsappMassage } from "../data/Strings";
 import Header from "../components/Header";
 import { SubscriptionCardData } from "../data/data";
@@ -16,12 +17,24 @@ import { logoWhatsapp } from "ionicons/icons";
 const Payment: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
     const { subscriptionId } = useParams<{ subscriptionId: string }>();
+    const [code, setCode] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
+
 
     const subscription = SubscriptionCardData.find(
         (subscription) => subscription.id.toString() === subscriptionId
     );
 
     const message = PaymentWhatsappMassage(subscription)
+
+    const history = useHistory();
+    const handelSubmit = () => {
+        if (code == subscription?.code) {
+            history.replace(PaymentStrings.link);
+        } else
+            setIsOpen(true);
+    };
+
 
     return (
         <IonPage>
@@ -50,20 +63,29 @@ const Payment: React.FC = () => {
                     <div className="ion-margin-horizontal">
                         <h2 className="payment-input-label">{PaymentStrings.inputLabel}</h2>
                         <IonInput
+                            value={code}
+                            onIonChange={(e) => setCode(e.detail.value!)}
                             className="payment-input"
                             placeholder={PaymentStrings.inputPlaceholder}
                             type="text"
                         />
                         <div className="payment-button-container">
                             <IonButton
+                                onClick={handelSubmit}
                                 className="payment-button"
-                                routerLink={PaymentStrings.link}
                             >
                                 {PaymentStrings.inputButton}
                             </IonButton>
                         </div>
                     </div>
                 </div>
+                <IonToast
+                    color={'secondary'}
+                    isOpen={isOpen}
+                    message={PaymentStrings.toastMessage}
+                    onDidDismiss={() => setIsOpen(false)}
+                    duration={5000}
+                ></IonToast>
                 <IonImg className="footer-image" src={PaymentStrings.footerImage} />
             </IonContent>
         </IonPage>
