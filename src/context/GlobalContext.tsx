@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router';
-import { CategoryStrings, Colors } from '../data/Strings';
+import { CategoryStrings, Colors, LoginStrings } from '../data/Strings';
 import { getItem, initStorage } from '../services/storage';
 
 interface GlobalContextProps {
@@ -47,7 +47,7 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     const isLoggedIn = async () => {
         const username = await getItem('username');
 
-        return !!username; // Return true if username exists, false otherwise
+        return username == LoginStrings.username; // Return true if username exists, false otherwise
     };
 
     useEffect(() => {
