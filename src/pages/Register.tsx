@@ -1,5 +1,5 @@
-import { IonButton, IonContent, IonInput, IonPage, IonTitle } from '@ionic/react';
-import { useState } from 'react';
+import { IonButton, IonContent, IonInput, IonPage, IonTitle, IonToast } from '@ionic/react';
+import { useEffect, useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
 import { Links, RegisterStrings } from '../data/Strings';
@@ -9,15 +9,23 @@ import { setItem } from '../services/storage';
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const { setLoggedIn, setRegistered } = useGlobal();
     const history = useHistory();
 
     const handleRegister = () => {
-        setItem('username', username)
-        setRegistered(true);
-        setLoggedIn(true);
-        history.replace(Links.subscription);
+        if (password == '' || username == '' || confirmPassword == '') {
+            setIsOpen(true);
+        } else {
+            setIsOpen(false);
+            setItem('username', username)
+            setRegistered(true);
+            setLoggedIn(true);
+            history.replace(Links.subscription);
+        }
+
     };
 
     return (
@@ -37,7 +45,6 @@ const Register: React.FC = () => {
                             className='login-input'
                             placeholder="username"
                             type="text"
-                            // value={username}
                             onIonChange={(e) => setUsername(e.detail.value!)}
                         />
                     </div>
@@ -49,7 +56,6 @@ const Register: React.FC = () => {
                             className='login-input'
                             placeholder="password"
                             type="password"
-                            // value={password}
                             onIonChange={(e) => setPassword(e.detail.value!)}
                         />
                     </div>
@@ -61,8 +67,7 @@ const Register: React.FC = () => {
                             className='login-input'
                             placeholder="password"
                             type="password"
-                            // value={password}
-                            onIonChange={(e) => setPassword(e.detail.value!)}
+                            onIonChange={(e) => setConfirmPassword(e.detail.value!)}
                         />
                     </div>
 
@@ -72,6 +77,13 @@ const Register: React.FC = () => {
                         </IonButton>
                     </div>
                 </div>
+                <IonToast
+                    color={'tertiary'}
+                    isOpen={isOpen}
+                    message={"Some Filed is empty"}
+                    onDidDismiss={() => setIsOpen(false)}
+                    duration={3000}
+                ></IonToast>
             </IonContent>
         </IonPage>
     );

@@ -26,6 +26,10 @@ export const Links = {
     tabs: '/tabs',
     contact: '/contact',
     about: '/about',
+    tab1: '/tabs/tab1',
+    tab2: '/tabs/tab2',
+    tab3: '/tabs/tab3',
+    tab4: '/tabs/tab5',
 }
 
 export const HeaderStrings = {

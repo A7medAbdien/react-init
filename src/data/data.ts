@@ -400,7 +400,7 @@ export const MainCardData: CategoryCardType[] = [
         icon: pronunciationImage,
         bgColor: Colors.yellow,
         textColor: Colors.navy,
-        path: Links.tabs
+        path: Links.tab1
     },
     {
         id: 2,
@@ -408,7 +408,7 @@ export const MainCardData: CategoryCardType[] = [
         icon: videosImage,
         bgColor: Colors.orange,
         textColor: Colors.yellow,
-        path: Links.tabs
+        path: Links.tab2
     },
     {
         id: 3,
@@ -416,7 +416,7 @@ export const MainCardData: CategoryCardType[] = [
         icon: parentsImage,
         bgColor: Colors.sky,
         textColor: Colors.orange,
-        path: Links.tabs
+        path: Links.tab3
     },
     {
         id: 4,
@@ -424,7 +424,7 @@ export const MainCardData: CategoryCardType[] = [
         icon: gamesImage,
         bgColor: Colors.navy,
         textColor: Colors.sky,
-        path: Links.tabs
+        path: Links.tab4
     }
 ]
 
