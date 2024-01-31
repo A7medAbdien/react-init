@@ -68,7 +68,7 @@ const Payment: React.FC = () => {
                         <h2 className="payment-input-label">{PaymentStrings.inputLabel}</h2>
                         <IonInput
                             value={code}
-                            onIonChange={(e) => setCode(e.detail.value!)}
+                            onIonInput={(e) => setCode(e.detail.value!)}
                             className="payment-input"
                             placeholder={PaymentStrings.inputPlaceholder}
                             type="text"

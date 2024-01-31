@@ -61,7 +61,7 @@ const Login: React.FC = () => {
                             placeholder="username"
                             type="text"
                             // value={username}
-                            onIonChange={(e) => setUsername(e.detail.value!)}
+                            onIonInput={(e) => setUsername(e.detail.value!)}
                         />
                     </div>
                     <div className="ion-margin-horizontal login-input-container">
@@ -73,7 +73,7 @@ const Login: React.FC = () => {
                             placeholder="password"
                             type="password"
                             // value={password}
-                            onIonChange={(e) => setPassword(e.detail.value!)}
+                            onIonInput={(e) => setPassword(e.detail.value!)}
                         />
                     </div>
 

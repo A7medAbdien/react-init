@@ -37,7 +37,7 @@ const ProfileInput: React.FC<ProfileInputType> = ({ fieldLabel, value, setValue,
                 className='login-input'
                 type={type as any}
                 value={value}
-                onIonChange={(e) => setValue(e.detail.value!)}
+                onIonInput={(e) => setValue(e.detail.value!)}
             />
         </div >
     </>
