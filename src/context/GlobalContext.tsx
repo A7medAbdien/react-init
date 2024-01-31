@@ -6,10 +6,12 @@ import { CategoryStrings, Colors, LoginStrings } from '../data/Strings';
 import { getItem, initStorage } from '../services/storage';
 
 interface GlobalContextProps {
+    isPayed: boolean;
     loggedIn: boolean;
     registered: boolean;
     profileOpen: boolean;
     secondaryColoredBg: boolean;
+    setIsPayed: React.Dispatch<React.SetStateAction<boolean>>;
     setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
     setRegistered: React.Dispatch<React.SetStateAction<boolean>>;
     setProfileOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,6 +24,7 @@ interface GlobalProviderProps {
 }
 
 export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
+    const [isPayed, setIsPayed] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [registered, setRegistered] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
@@ -49,21 +52,30 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
 
         return username == LoginStrings.username; // Return true if username exists, false otherwise
     };
+    const isUserPayed = async () => {
+        const isPayed = await getItem('isPayed');
+
+        return !!isPayed; // Return true if username exists, false otherwise
+    };
 
     useEffect(() => {
         const checkLoggedIn = async () => {
             await initStorage();
             const userIsLoggedIn = await isLoggedIn();
+            const userPayed = await isUserPayed();
 
             if (userIsLoggedIn) {
                 setLoggedIn(true);
+            }
+            if (userPayed) {
+                setIsPayed(true);
             }
         };
 
         checkLoggedIn();
     }, []);
     return (
-        <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen, secondaryColoredBg }}>
+        <GlobalContext.Provider value={{ isPayed, setIsPayed, registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen, secondaryColoredBg }}>
             {children}
         </GlobalContext.Provider>
     );

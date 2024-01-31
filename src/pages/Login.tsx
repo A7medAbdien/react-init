@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const { setLoggedIn, setRegistered, loggedIn } = useGlobal();
+    const { setLoggedIn, setRegistered, loggedIn, isPayed } = useGlobal();
     const history = useHistory();
 
     const handleLogin = () => {
@@ -31,9 +31,10 @@ const Login: React.FC = () => {
     };
 
     useEffect(() => {
-        initStorage();
-        if (loggedIn)
+        if (loggedIn && isPayed)
             history.replace(LoginStrings.loginSuccessLink);
+        else if (loggedIn && !isPayed)
+            history.replace(Links.subscription);
     }, [])
 
     return (

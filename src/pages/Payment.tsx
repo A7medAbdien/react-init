@@ -13,13 +13,15 @@ import { PaymentStrings, PaymentWhatsappMassage } from "../data/Strings";
 import Header from "../components/Header";
 import { SubscriptionCardData } from "../data/data";
 import { logoWhatsapp } from "ionicons/icons";
+import { useGlobal } from "../context/GlobalContext";
+import { setItem } from "../services/storage";
 
 const Payment: React.FC = () => {
-    // Use useParams hook to retrieve parameters from the URL
     const { subscriptionId } = useParams<{ subscriptionId: string }>();
     const [code, setCode] = useState('');
     const [isOpen, setIsOpen] = useState(false);
 
+    const { setIsPayed } = useGlobal()
 
     const subscription = SubscriptionCardData.find(
         (subscription) => subscription.id.toString() === subscriptionId
@@ -30,6 +32,8 @@ const Payment: React.FC = () => {
     const history = useHistory();
     const handelSubmit = () => {
         if (code == subscription?.code) {
+            setItem('isPayed', subscription.duration)
+            setIsPayed(true);
             history.replace(PaymentStrings.link);
         } else
             setIsOpen(true);
