@@ -34,6 +34,7 @@ export interface SubscriptionCardType {
     duration: string;
     bgColor: string;
     textColor: string;
+    code: string;
 };
 
 export interface CategoryCardType {

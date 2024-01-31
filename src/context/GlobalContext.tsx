@@ -2,7 +2,8 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router';
-import { CategoryStrings, Colors } from '../data/Strings';
+import { CategoryStrings, Colors, LoginStrings } from '../data/Strings';
+import { getItem, initStorage } from '../services/storage';
 
 interface GlobalContextProps {
     loggedIn: boolean;
@@ -43,6 +44,24 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
         setProfileOpen(false)
     }, [pathname])
 
+    const isLoggedIn = async () => {
+        const username = await getItem('username');
+
+        return username == LoginStrings.username; // Return true if username exists, false otherwise
+    };
+
+    useEffect(() => {
+        const checkLoggedIn = async () => {
+            await initStorage();
+            const userIsLoggedIn = await isLoggedIn();
+
+            if (userIsLoggedIn) {
+                setLoggedIn(true);
+            }
+        };
+
+        checkLoggedIn();
+    }, []);
     return (
         <GlobalContext.Provider value={{ registered, setRegistered, loggedIn, setLoggedIn, profileOpen, setProfileOpen, secondaryColoredBg }}>
             {children}

@@ -1,14 +1,9 @@
 import { CategoryCardType, ContactType, IconCardType, ItemCardType, ProfileLinkType } from './../types/Types';
 import { CardType, SubscriptionCardType } from "../types/Types";
 import {
-    alertCircleOutline,
-    ellipse,
-    helpCircle,
-    helpCircleOutline,
-    square,
-    triangle
+    alertCircleOutline, helpCircle
 } from 'ionicons/icons';
-import { Colors, Links, ContactStrings } from './Strings';
+import { Colors, Links } from './Strings';
 import account from '../../public/imgs/account.svg';
 
 import toothbrushImage from '../../public/imgs/cardIcons/toothbrush.svg'
@@ -343,6 +338,7 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
         price: 2,
         bgColor: Colors.yellow,
         textColor: Colors.navy,
+        code: '1111',
     },
     {
         id: 2,
@@ -350,6 +346,7 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
         price: 5,
         bgColor: Colors.orange,
         textColor: Colors.yellow,
+        code: '3333',
     },
     {
         id: 3,
@@ -357,6 +354,7 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
         price: 16,
         bgColor: Colors.sky,
         textColor: Colors.orange,
+        code: '7777',
     },
     {
         id: 4,
@@ -364,6 +362,7 @@ export const SubscriptionCardData: SubscriptionCardType[] = [
         price: 19.5,
         bgColor: Colors.navy,
         textColor: Colors.sky,
+        code: '1212',
     },
 ]
 

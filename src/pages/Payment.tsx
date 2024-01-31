@@ -1,45 +1,95 @@
-import React from 'react';
-import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonButton, IonImg, IonInput, IonButtons, IonIcon } from '@ionic/react';
-import { useParams } from 'react-router-dom';
-import { PaymentStrings } from '../data/Strings';
-import { chevronBackOutline } from 'ionicons/icons';
-import BackButton from '../components/BackButton';
-import Header from '../components/Header';
+import React, { useState } from "react";
+import {
+    IonContent,
+    IonPage,
+    IonButton,
+    IonImg,
+    IonInput,
+    IonIcon,
+    IonToast,
+} from "@ionic/react";
+import { useHistory, useParams } from "react-router-dom";
+import { PaymentStrings, PaymentWhatsappMassage } from "../data/Strings";
+import Header from "../components/Header";
+import { SubscriptionCardData } from "../data/data";
+import { logoWhatsapp } from "ionicons/icons";
 
 const Payment: React.FC = () => {
     // Use useParams hook to retrieve parameters from the URL
     const { subscriptionId } = useParams<{ subscriptionId: string }>();
+    const [code, setCode] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
+
+
+    const subscription = SubscriptionCardData.find(
+        (subscription) => subscription.id.toString() === subscriptionId
+    );
+
+    const message = PaymentWhatsappMassage(subscription)
+
+    const history = useHistory();
+    const handelSubmit = () => {
+        if (code == subscription?.code) {
+            history.replace(PaymentStrings.link);
+        } else
+            setIsOpen(true);
+    };
 
 
     return (
-        <IonPage >
+        <IonPage>
             <IonContent>
                 <Header />
                 <div className="payment-container">
                     <div className="ion-margin-horizontal">
-                        <h2 className='payment-input-label'>
-                            {PaymentStrings.inputLabel}
+                        <h2 className="payment-input-label">
+                            {PaymentStrings.paymentLabel}
                         </h2>
+
+                        <IonButton
+                            href={`${PaymentStrings.paymentLink}${message}`}
+                            target="_blank"
+                            className="payment-button"
+                        >
+                            {PaymentStrings.paymentButton}
+                            <IonIcon
+                                slot="end"
+                                src={logoWhatsapp}
+                            ></IonIcon>
+                        </IonButton>
+                    </div>
+                    <br />
+                    <br />
+                    <div className="ion-margin-horizontal">
+                        <h2 className="payment-input-label">{PaymentStrings.inputLabel}</h2>
                         <IonInput
-                            className='payment-input'
+                            value={code}
+                            onIonChange={(e) => setCode(e.detail.value!)}
+                            className="payment-input"
                             placeholder={PaymentStrings.inputPlaceholder}
                             type="text"
                         />
                         <div className="payment-button-container">
                             <IonButton
-                                className='payment-button'
-                                size="large"
-                                routerLink={PaymentStrings.link}
+                                onClick={handelSubmit}
+                                className="payment-button"
                             >
-                                {PaymentStrings.paymentButton}
+                                {PaymentStrings.inputButton}
                             </IonButton>
                         </div>
                     </div>
                 </div>
-                <IonImg className='footer-image' src={PaymentStrings.footerImage} />
+                <IonToast
+                    color={'secondary'}
+                    isOpen={isOpen}
+                    message={PaymentStrings.toastMessage}
+                    onDidDismiss={() => setIsOpen(false)}
+                    duration={5000}
+                ></IonToast>
+                <IonImg className="footer-image" src={PaymentStrings.footerImage} />
             </IonContent>
-        </IonPage >
-    )
+        </IonPage>
+    );
 };
 
 export default Payment;

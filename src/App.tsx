@@ -50,7 +50,7 @@ const Taps: React.FC = () => {
 
     const { loggedIn } = useGlobal();
     if (!loggedIn) {
-        // return <Redirect to={Links.base} />
+        return <Redirect to={Links.base} />
     }
     const baseUrl = Links.tabs
 
@@ -85,6 +85,26 @@ const Taps: React.FC = () => {
     </>
 }
 
+
+const PrivateRoute: React.FC<{ component: React.ComponentType<any>; path: string }> = ({ component: Component, ...rest }) => {
+    const { loggedIn } = useGlobal();
+    const isAuthenticated = loggedIn; // Replace this with your authentication logic
+
+    return (
+        <Route
+            {...rest}
+            render={(props) =>
+                isAuthenticated ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to={{ pathname: Links.login, state: { from: props.location } }} />
+                )
+            }
+        />
+    );
+};
+
+
 const App: React.FC = () => {
     return <IonApp>
         <IonReactRouter>
@@ -99,28 +119,16 @@ const App: React.FC = () => {
                     <Route exact path={Links.register}>
                         <Register />
                     </Route>
-                    <Route exact path={Links.subscription}>
-                        <Subscription />
-                    </Route>
-                    <Route exact path={`${Links.payment}/:subscriptionId`}>
-                        <Payment />
-                    </Route>
-                    <Route exact path={Links.category}>
-                        <Category />
-                    </Route>
-                    <Route exact path={Links.main}>
-                        <Main />
-                    </Route>
+                    <PrivateRoute path={Links.subscription} component={Subscription} />
+                    <PrivateRoute component={Payment} path={`${Links.payment}/:subscriptionId`} />
+                    <PrivateRoute component={Category} path={Links.category} />
+                    <PrivateRoute component={Main} path={Links.main} />
                     <Route path={Links.tabs}>
                         <Taps />
                         <Profile />
                     </Route>
-                    <Route exact path={Links.contact}>
-                        <Contact />
-                    </Route>
-                    <Route exact path={Links.about}>
-                        <About />
-                    </Route>
+                    <PrivateRoute component={Contact} path={Links.contact} />
+                    <PrivateRoute component={About} path={Links.about} />
 
                 </IonRouterOutlet>
 

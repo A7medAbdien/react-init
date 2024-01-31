@@ -4,6 +4,9 @@ import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
 import { Links, LoginStrings } from '../data/Strings';
 import Header from '../components/Header';
+import { Storage } from '@ionic/storage';
+import { initStorage, setItem } from '../services/storage';
+
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -16,6 +19,7 @@ const Login: React.FC = () => {
         // check if there is a user with the same username and password
 
         if (username == LoginStrings.username && password == LoginStrings.password) {
+            setItem('username', username)
             setRegistered(true);
             setLoggedIn(true);
             history.replace(LoginStrings.loginSuccessLink);
@@ -27,6 +31,7 @@ const Login: React.FC = () => {
     };
 
     useEffect(() => {
+        initStorage();
         if (loggedIn)
             history.replace(LoginStrings.loginSuccessLink);
     }, [])

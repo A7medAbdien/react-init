@@ -3,14 +3,7 @@ import logo from '../../public/imgs/logo-pri.svg'
 import logoSec from '../../public/imgs/logo-sec.svg'
 import bg from '../../public/imgs/bg-pri.svg'
 import bgSec from '../../public/imgs/bg-sc.svg'
-// import bicycle-svg from '../../public/imgs/bicycle-svgrepo-com.svg.svg'
-// import account from '../../public/imgs/clothes.svg'
-// import account from '../../public/imgs/crying.svg'
-// import account from '../../public/imgs/'
-// import account from '../../public/imgs/account.svg'
-// import account from '../../public/imgs/account.svg'
-// import account from '../../public/imgs/account.svg'
-// const images = import.meta.glob("../../public/imgs/*")
+import { SubscriptionCardType } from '../types/Types'
 
 
 export const Colors = {
@@ -78,11 +71,21 @@ export const SubscriptionStrings = {
     concurrency: 'BD',
 }
 
+export const PaymentWhatsappMassage = (subscription?: SubscriptionCardType) => {
+    return subscription ?
+        `Hi Menkom, I'm interested in subscribing for your ${subscription?.duration} plane, that is for ${subscription?.price}BD.`
+        : 'Hi Menkom, I am trying to Pay'
+}
+
 export const PaymentStrings = {
     title: 'Payment',
-    inputLabel: 'Location Link',
-    inputPlaceholder: 'Enter Location Link',
-    paymentButton: 'Done',
+    paymentLabel: '1. Pay and Get your code',
+    paymentButton: 'Pay by',
+    paymentLink: 'https://wa.me/97366988803?text=',
+    inputLabel: '2. Enter the code to access',
+    inputPlaceholder: 'Enter code here',
+    inputButton: 'Done',
+    toastMessage: 'Please, enter the right code',
     footerImage: bg,
     link: Links.category
 }
