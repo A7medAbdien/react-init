@@ -1,4 +1,4 @@
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonImg, IonInput, IonItem, IonList, IonModal, IonPage, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useHistory } from 'react-router-dom';
@@ -11,22 +11,28 @@ import { initStorage, setItem } from '../services/storage';
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
 
     const { setLoggedIn, setRegistered, loggedIn, isPayed } = useGlobal();
     const history = useHistory();
 
     const handleLogin = () => {
         // check if there is a user with the same username and password
-
-        if (username == LoginStrings.username && password == LoginStrings.password) {
-            setItem('username', username)
-            setRegistered(true);
-            setLoggedIn(true);
-            history.replace(LoginStrings.loginSuccessLink);
+        if (password == '' || username == '') {
+            setIsOpen(true);
         } else {
-            console.log(username, password);
-            setRegistered(false);
-            history.replace(LoginStrings.loginFailLink);
+            setIsOpen(false);
+            if (username == LoginStrings.username && password == LoginStrings.password) {
+                setItem('username', username)
+                setRegistered(true);
+                setLoggedIn(true);
+                history.replace(LoginStrings.loginSuccessLink);
+            } else {
+                console.log(username, password);
+                setRegistered(false);
+                history.replace(LoginStrings.loginFailLink);
+            }
         }
     };
 
@@ -77,6 +83,13 @@ const Login: React.FC = () => {
                         </IonButton>
                     </div>
                 </div>
+                <IonToast
+                    color={'tertiary'}
+                    isOpen={isOpen}
+                    message={"Some Filed is empty"}
+                    onDidDismiss={() => setIsOpen(false)}
+                    duration={3000}
+                ></IonToast>
             </IonContent>
         </IonPage>
     );
