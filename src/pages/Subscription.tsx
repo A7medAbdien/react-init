@@ -7,7 +7,7 @@ import Header from '../components/Header';
 
 const SubscriptionCard: React.FC<SubscriptionCardType> = ({ id, price, duration, bgColor, textColor }) => {
     return <>
-        <IonCol className='subscription-card' style={{ borderColor: bgColor, backgroundColor: bgColor }}>
+        <IonCol size='5' className='subscription-card' style={{ borderColor: bgColor, backgroundColor: bgColor }}>
             <Link style={{ textDecoration: 'none' }} to={`${Links.payment}/${id}`}>
                 <div className="subscription-price-container" style={{ borderColor: bgColor }}>
                     <div style={{ color: textColor }} className="subscription-price-container inner">
@@ -31,18 +31,18 @@ const Subscription: React.FC = () => {
                     </div>
 
                     <IonGrid fixed={true}>
-                        <IonRow>
+                        <IonRow style={{ alignItem: 'center', justifyContent: 'center' }}>
                             <SubscriptionCard {...SubscriptionCardData[0]} />
                             <SubscriptionCard {...SubscriptionCardData[1]} />
                         </IonRow>
-                        <IonRow>
+                        <IonRow style={{ alignItem: 'center', justifyContent: 'center' }}>
                             <SubscriptionCard {...SubscriptionCardData[2]} />
                             <SubscriptionCard {...SubscriptionCardData[3]} />
                         </IonRow>
                     </IonGrid>
                 </div>
             </IonContent>
-        </IonPage>
+        </IonPage >
     );
 };
 
