@@ -11,3 +11,10 @@ ionic cap open android
 ```
 
 u need to install Android Studio
+
+# To Run
+
+```sh
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+ionic serve
+```
