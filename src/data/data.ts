@@ -316,14 +316,14 @@ export const TabsData = [
     {
         name: 'Tab 4',
         path: '/tab4',
-        icon: gamesImage,
+        icon: dailyTaskImage,
         type: 'icon',
         cardList: IconCardListTab2,
     },
     {
         name: 'Tab 5',
         path: '/tab5',
-        icon: dailyTaskImage,
+        icon: gamesImage,
         type: 'item',
         cardList: ItemCardList,
     },
