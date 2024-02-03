@@ -18,3 +18,7 @@ u need to install Android Studio
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ionic serve
 ```
+
+# SplashScreen
+
+follow https://capacitorjs.com/docs/apis/splash-screen
