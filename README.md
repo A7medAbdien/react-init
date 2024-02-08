@@ -55,7 +55,7 @@ ionic cap open ios
 ```
 
 >**_NOTE:_**:
-> I do not have a mac, but I included all the resources that might need to make the app work for iOS. So do not get devastated, and be open to search for a solution.
+> I do not have a mac, but I included all the resources that might needed to make the app work for iOS. So do not get devastated, and be open to search for a solution.
 
 # SplashScreen
 
