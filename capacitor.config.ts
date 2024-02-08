@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'react-init',
+  appId: 'com.aga.menkom',
+  appName: 'Menkom',
   webDir: 'dist',
   server: {
     androidScheme: 'https'
